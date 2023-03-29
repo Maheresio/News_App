@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/view/widgets/breaking_news_slider.dart';
-import 'package:news_app/view/widgets/custom_animated_dots.dart';
-import 'package:news_app/view/widgets/recommendation_list_view.dart';
+import 'breaking_news_slider.dart';
+import 'custom_animated_dots.dart';
+import 'recommendation_list_view.dart';
 
 
 import '../../core/utils/app_strings.dart';

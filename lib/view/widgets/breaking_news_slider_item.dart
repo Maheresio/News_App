@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/manager/home_provider.dart';
+import '../../manager/home_provider.dart';
 import 'package:provider/provider.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {

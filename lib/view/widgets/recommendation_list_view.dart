@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/manager/home_provider.dart';
-import 'package:news_app/view/widgets/recommendation_list_view_item.dart';
 import 'package:provider/provider.dart';
+
+import '../../manager/home_provider.dart';
+import 'recommendation_list_view_item.dart';
 
 class RecommendationListView extends StatelessWidget {
   const RecommendationListView({super.key});
