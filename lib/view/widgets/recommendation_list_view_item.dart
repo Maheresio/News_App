@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 import '../../manager/home_provider.dart';
 
 class RecommendationListViewItem extends StatelessWidget {
-  const RecommendationListViewItem({super.key, this.index});
+  const RecommendationListViewItem({super.key,required this.index});
 
-  final index;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(

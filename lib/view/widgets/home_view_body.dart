@@ -4,7 +4,6 @@ import 'breaking_news_slider.dart';
 import 'custom_animated_dots.dart';
 import 'recommendation_list_view.dart';
 
-
 import '../../core/utils/app_strings.dart';
 import 'custom_list_view_header.dart';
 import 'custom_app_bar.dart';
@@ -41,6 +40,9 @@ class HomeViewBody extends StatelessWidget {
           CustomListViewHeader(
             headerText: AppStrings.kRecommendation,
             onPressed: () {},
+          ),
+          SizedBox(
+            height: 8.h,
           ),
           const RecommendationListView(),
         ],
