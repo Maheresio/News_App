@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/view/news_details_view.dart';
 import 'home_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -67,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<Widget> _buildScreens() {
     return [
       const HomeView(),
-      const HomeView(),
+      const NewsDetailsView(),
       const HomeView(),
       const HomeView(),
     ];
@@ -87,7 +88,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         activeColorSecondary: Colors.white,
       ),
       PersistentBottomNavBarItem(
-         icon: const Icon(
+        icon: const Icon(
           CupertinoIcons.globe,
           color: Colors.white,
         ),
@@ -109,13 +110,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
         activeColorSecondary: Colors.white,
       ),
       PersistentBottomNavBarItem(
-         icon: const Icon(
+        icon: const Icon(
           CupertinoIcons.person,
           color: Colors.white,
         ),
         inactiveIcon: const Icon(CupertinoIcons.person),
         title: "Profile",
-       activeColorPrimary: Theme.of(context).primaryColor,
+        activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: Colors.grey,
         activeColorSecondary: Colors.white,
       ),
