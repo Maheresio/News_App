@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../core/helpers/custom_app_bar_icon.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class CustomHomeAppBar extends StatelessWidget {
+  const CustomHomeAppBar({
     super.key,
   });
 

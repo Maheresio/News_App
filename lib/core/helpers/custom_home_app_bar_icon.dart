@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/app_colors.dart';
 
-FloatingActionButton customAppBarIcon({
+FloatingActionButton customHomeAppBarIcon({
   required IconData icon,
   final void Function()? onPressed,
   final isNotified = false,
