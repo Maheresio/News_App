@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../manager/home_provider.dart';
+import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {
@@ -9,7 +9,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeProvider>(
+    return Consumer<NewsProvider>(
       builder: (context, value, _) => Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -59,7 +59,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                 children: [
                   Text(
                     overflow: TextOverflow.ellipsis,
-                    value.breakingNewsList.elementAt(index).publisher,
+                    value.breakingNewsList.elementAt(index).author,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: Colors.grey.shade300.withOpacity(.9),
                           fontWeight: FontWeight.w100,
@@ -88,7 +88,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                     width: 6.w,
                   ),
                   Text(
-                    '${value.breakingNewsList.elementAt(index).publishedTime} hours ago',
+                    '${value.breakingNewsList.elementAt(index).publishedDate} hours ago',
                     style: Theme.of(context).textTheme.bodySmall!.copyWith(
                           color: Colors.grey.shade300.withOpacity(
                             .9,

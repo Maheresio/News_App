@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'breaking_news_slider.dart';
-import 'custom_animated_dots.dart';
-import 'recommendation_list_view.dart';
 
 import '../../core/utils/app_strings.dart';
-import 'custom_list_view_header.dart';
+import 'breaking_news_slider.dart';
+import 'custom_animated_dots.dart';
 import 'custom_home_app_bar.dart';
+import 'custom_list_view_header.dart';
+import 'recommendation_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

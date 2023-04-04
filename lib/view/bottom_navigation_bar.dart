@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/view/news_details_view.dart';
-import 'home_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
+import 'home_view.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

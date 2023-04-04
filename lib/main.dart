@@ -5,7 +5,6 @@ import 'package:wakelock/wakelock.dart';
 
 import 'core/helpers/custom_status_bar.dart';
 import 'core/utils/app_router.dart';
-import 'view/bottom_navigation_bar.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

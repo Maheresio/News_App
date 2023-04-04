@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../manager/home_provider.dart';
 import 'recommendation_list_view_item.dart';
 
 class RecommendationListView extends StatelessWidget {
@@ -10,7 +10,7 @@ class RecommendationListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<HomeProvider>(context, listen: false);
+    final providerData = Provider.of<NewsProvider>(context, listen: false);
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),

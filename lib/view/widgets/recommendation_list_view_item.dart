@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../manager/home_provider.dart';
 
 class RecommendationListViewItem extends StatelessWidget {
   const RecommendationListViewItem({super.key,required this.index});
@@ -10,7 +10,7 @@ class RecommendationListViewItem extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeProvider>(
+    return Consumer<NewsProvider>(
       builder: (context, value, child) {
         return SizedBox(
           height: 100.h,

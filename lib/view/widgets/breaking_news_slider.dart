@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../../manager/news_provider.dart';
 import 'breaking_news_slider_item.dart';
 import 'package:provider/provider.dart';
 
-import '../../manager/home_provider.dart';
 
 class BreakingNewsSlider extends StatelessWidget {
   const BreakingNewsSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<HomeProvider>(context, listen: false);
+    final providerData = Provider.of<NewsProvider>(context, listen: false);
     return CarouselSlider.builder(
       itemCount: providerData.breakingNewsList.length,
       itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
