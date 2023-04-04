@@ -10,8 +10,8 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
   const CustomBlurredAppBarIcon({
     Key? key,
     required this.iconData,
-    this.iconSize = 20,
-    this.blurSigma = 5,
+    this.iconSize = 25,
+    this.blurSigma = 2,
   }) : super(key: key);
 
   @override
@@ -21,7 +21,7 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
       height: MediaQuery.of(context).size.width * 0.06 + iconSize,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.blueGrey.withOpacity(0.7),
+        color: Colors.black54.withOpacity(0.15),
       ),
       child: Center(
         child: ClipOval(
@@ -30,9 +30,12 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
               sigmaX: blurSigma,
               sigmaY: blurSigma,
             ),
-            child: Icon(
-              iconData,
-              size: iconSize,
+            child: IconButton(
+              icon: Icon(
+                iconData,
+                size: iconSize,
+              ),
+              onPressed: () {},
               color: Colors.white,
             ),
           ),
