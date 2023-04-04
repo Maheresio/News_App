@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wakelock/wakelock.dart';
 
 import 'core/helpers/custom_status_bar.dart';
+import 'core/utils/app_router.dart';
 import 'view/bottom_navigation_bar.dart';
 
 Future<void> main() async {
@@ -18,12 +19,12 @@ Future<void> main() async {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           theme: ThemeData.light().copyWith(
             textTheme: GoogleFonts.dmSansTextTheme(),
           ),
-          home: const BottomNavBar(),
+          routerConfig: AppRouter.router,
         );
       }));
 }
