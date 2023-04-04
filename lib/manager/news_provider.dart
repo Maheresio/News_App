@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../model/breaking_news_model.dart';
 import '../model/recommendation_model.dart';
 
-class HomeProvider with ChangeNotifier {
+class NewsProvider with ChangeNotifier {
   int index = 0;
   void toggleSlides(int index) {
     this.index = index;
@@ -12,87 +12,52 @@ class HomeProvider with ChangeNotifier {
 
   List<BreakingNewsModel> breakingNewsList = [
     BreakingNewsModel(
-      category: 'Sports',
-      publisher: 'CNN Indonesia',
-      imageUrl:
-          'https://images.giant-bicycles.com/npxjlknouzmeri0mnboz/preview.jpg',
-      publishedTime: 6,
-      title: 'Alexander wears modified helmet in road races',
-    ),
+        category: 'Sports',
+        author: 'CNN Indonesia',
+        imageUrl:
+            'https://images.giant-bicycles.com/npxjlknouzmeri0mnboz/preview.jpg',
+        publishedDate: 6,
+        title: 'Alexander wears modified helmet in road races',
+        description:
+            'The basic design of a bicycle has remained largely unchanged since its invention in the 19th century. The rider sits on the seat and uses their feet to pedal the bike, which powers the chain and turns the rear wheel. The handlebars are used to steer the bike, and brakes are used to slow down or stop the bike.'),
     BreakingNewsModel(
       category: 'Business',
-      publisher: 'BBC NEWS',
+      author: 'BBC NEWS',
       imageUrl:
           'https://ichef.bbci.co.uk/news/976/cpsprodpb/AE34/production/_129169544_gettyimages-1459166551.jpg.webp',
-      publishedTime: 18,
+      publishedDate: 18,
       title: 'Elon Musk: Twitter boss announces blue tick shake-up',
+      description:
+          'Musk attended Queen’s University in Kingston, Ontario, and in 1992 he transferred to the University of Pennsylvania, Philadelphia, where he received bachelor’s degrees in physics and economics in 1997. He enrolled in graduate school in physics at Stanford University in California, but he left after only two days because he felt that the Internet had much more potential to change society than work in physics. In 1995 he founded Zip2, a company that provided maps and business directories to online newspapers. In 1999 Zip2 was bought by the computer manufacturer Compaq for \$307 million, and Musk then founded an online financial services company, X.com, which later became PayPal, which specialized in transferring money online. The online auction eBay bought PayPal in 2002 for \$1.5 billion.',
     ),
     BreakingNewsModel(
-      category: 'Technology',
-      publisher: 'BBC',
-      imageUrl:
-          'https://ichef.bbci.co.uk/news/976/cpsprodpb/9517/production/_129176183_gettyimages-644069149.jpg.webp',
-      publishedTime: 5,
-      title: 'AI could replace equivalent of 300 million jobs - report',
-    ),
+        category: 'Technology',
+        author: 'BBC',
+        imageUrl:
+            'https://ichef.bbci.co.uk/news/976/cpsprodpb/9517/production/_129176183_gettyimages-644069149.jpg.webp',
+        publishedDate: 5,
+        title: 'AI could replace equivalent of 300 million jobs - report',
+        description:
+            'AI is a rapidly growing field that is transforming the way we live and work. It has numerous applications in industries such as healthcare, finance, transportation, and manufacturing, and is being used to create intelligent virtual assistants, self-driving cars, and personalized marketing.'),
     BreakingNewsModel(
-      category: 'News',
-      publisher: 'The Guardian',
-      imageUrl:
-          'https://i.guim.co.uk/img/media/9538e30fd542b7ecae8cd8e6ed9e40d42939a8b7/0_86_4183_2509/master/4183.jpg?width=620&quality=45&dpr=2&s=none',
-      publishedTime: 6,
-      title:
-          'Putin prepares Russia for ‘forever war’ with west as Ukraine invasion stalls',
-    ),
+        category: 'News',
+        author: 'The Guardian',
+        imageUrl:
+            'https://i.guim.co.uk/img/media/9538e30fd542b7ecae8cd8e6ed9e40d42939a8b7/0_86_4183_2509/master/4183.jpg?width=620&quality=45&dpr=2&s=none',
+        publishedDate: 6,
+        title:
+            'Putin prepares Russia for ‘forever war’ with west as Ukraine invasion stalls',
+        description:
+            'During his time in office, Putin has overseen significant changes in Russia, including a return to a more centralized government system and increased control over the media. He has been criticized for his government \'s treatment of political dissidents and alleged violations of human rights, as well /as his country \'s involvement in conflicts such as the war in Syria and the conflict in Ukraine.'),
     BreakingNewsModel(
-      category: 'Astronomy',
-      publisher: 'The Guardian',
-      imageUrl:
-          'https://i.guim.co.uk/img/media/86ae112ff09f4bc4ac9c5b2cda49af72472e1228/121_0_3635_2181/master/3635.jpg?width=620&quality=45&dpr=2&s=none',
-      publishedTime: 12,
-      title: 'Cosmic explosion last year may be ‘brightest ever seen’',
-    ),
-    BreakingNewsModel(
-      category: 'Sports',
-      publisher: 'CNN Indonesia',
-      imageUrl:
-          'https://images.giant-bicycles.com/npxjlknouzmeri0mnboz/preview.jpg',
-      publishedTime: 6,
-      title: 'Alexander wears modified helmet in road races',
-    ),
-    BreakingNewsModel(
-      category: 'Business',
-      publisher: 'BBC NEWS',
-      imageUrl:
-          'https://ichef.bbci.co.uk/news/976/cpsprodpb/AE34/production/_129169544_gettyimages-1459166551.jpg.webp',
-      publishedTime: 18,
-      title: 'Elon Musk: Twitter boss announces blue tick shake-up',
-    ),
-    BreakingNewsModel(
-      category: 'Technology',
-      publisher: 'BBC',
-      imageUrl:
-          'https://ichef.bbci.co.uk/news/976/cpsprodpb/9517/production/_129176183_gettyimages-644069149.jpg.webp',
-      publishedTime: 5,
-      title: 'AI could replace equivalent of 300 million jobs - report',
-    ),
-    BreakingNewsModel(
-      category: 'News',
-      publisher: 'The Guardian',
-      imageUrl:
-          'https://i.guim.co.uk/img/media/9538e30fd542b7ecae8cd8e6ed9e40d42939a8b7/0_86_4183_2509/master/4183.jpg?width=620&quality=45&dpr=2&s=none',
-      publishedTime: 6,
-      title:
-          'Putin prepares Russia for ‘forever war’ with west as Ukraine invasion stalls',
-    ),
-    BreakingNewsModel(
-      category: 'Astronomy',
-      publisher: 'The Guardian',
-      imageUrl:
-          'https://i.guim.co.uk/img/media/86ae112ff09f4bc4ac9c5b2cda49af72472e1228/121_0_3635_2181/master/3635.jpg?width=620&quality=45&dpr=2&s=none',
-      publishedTime: 12,
-      title: 'Cosmic explosion last year may be ‘brightest ever seen’',
-    ),
+        category: 'Astronomy',
+        author: 'The Guardian',
+        imageUrl:
+            'https://i.guim.co.uk/img/media/86ae112ff09f4bc4ac9c5b2cda49af72472e1228/121_0_3635_2181/master/3635.jpg?width=620&quality=45&dpr=2&s=none',
+        publishedDate: 12,
+        title: 'Cosmic explosion last year may be ‘brightest ever seen’',
+        description:
+            'Gamma-ray bursts are some of the most energetic and violent events in the universe, and are thought to be caused by the collapse of massive stars or the collision of two neutron stars. They emit intense bursts of gamma-ray radiation, which can last from milliseconds to several minutes.'),
   ];
 
   List<RecommendationModel> recommendationList = [
