@@ -24,7 +24,7 @@ class BookMarkListViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 image: NetworkImage(
-                    providerData.recommendationList.elementAt(index).imageUrl),
+                    providerData.bookMarkList.elementAt(index).imageUrl),
                 fit: BoxFit.cover,
               ),
             ),
@@ -37,13 +37,13 @@ class BookMarkListViewItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    providerData.recommendationList.elementAt(index).category,
+                    providerData.bookMarkList.elementAt(index).category,
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           color: Colors.grey.shade500,
                         ),
                   ),
                   Text(
-                    providerData.recommendationList.elementAt(index).title,
+                    providerData.bookMarkList.elementAt(index).title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -54,7 +54,7 @@ class BookMarkListViewItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage: NetworkImage(
-                          providerData.recommendationList
+                          providerData.bookMarkList
                               .elementAt(index)
                               .profileImageUrl,
                         ),
@@ -65,9 +65,7 @@ class BookMarkListViewItem extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          providerData.recommendationList
-                              .elementAt(index)
-                              .author,
+                          providerData.bookMarkList.elementAt(index).author,
                           overflow: TextOverflow.ellipsis,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(

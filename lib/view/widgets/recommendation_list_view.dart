@@ -3,10 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/view/widgets/recommendation_list_view_item.dart';
 import '../../core/utils/app_router.dart';
-import '../../core/utils/app_strings.dart';
 import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';
-
 
 class RecommendationListView extends StatelessWidget {
   const RecommendationListView({super.key});
@@ -20,12 +18,12 @@ class RecommendationListView extends StatelessWidget {
           child: ListView.separated(
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) => InkWell(
-                onTap: () => GoRouter.of(context)
-                        .push(AppRouter.kNewsDetailsView, extra: {
-                      'type': AppStrings.kRecommendation,
-                      'index': index,
-                    }),
-                child: RecommendationListViewItem(index: index)),
+              onTap: () => GoRouter.of(context).push(
+                AppRouter.kNewsDetailsView,
+                extra: value.recommendationList.elementAt(index),
+              ),
+              child: RecommendationListViewItem(index: index),
+            ),
             itemCount: value.recommendationList.length,
             scrollDirection: Axis.vertical,
             separatorBuilder: (context, index) => SizedBox(

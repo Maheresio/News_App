@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/model/news_model.dart';
 
 import 'widgets/news_details_view_body.dart';
 
 class NewsDetailsView extends StatelessWidget {
-  const NewsDetailsView({super.key, required this.data});
-final Map<String,dynamic> data;
+  const NewsDetailsView({super.key, required this.newsItem});
+final NewsModel newsItem;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: NewsDetailsViewBody(data: data),
+      body: NewsDetailsViewBody(newsItem: newsItem),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/view/bookmark_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import 'home_view.dart';
@@ -69,7 +70,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return [
       const HomeView(),
       const HomeView(),
-      const HomeView(),
+      const BookMarkView(),
       const HomeView(),
     ];
   }

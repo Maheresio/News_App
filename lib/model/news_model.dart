@@ -1,14 +1,18 @@
-class BreakingNewsModel {
+class NewsModel {
+  final String id;
   final String category;
   final String author;
   final String imageUrl;
+  final String profileImageUrl;
   final bool isVerified;
-  final int publishedDate;
+  final String publishedDate;
   final String title;
   final String description;
   bool isFavorite;
 
-  BreakingNewsModel({
+  NewsModel({
+    required this.id,
+    required this.profileImageUrl,
     this.isFavorite = false,
     required this.category,
     required this.description,

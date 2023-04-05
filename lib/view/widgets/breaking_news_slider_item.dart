@@ -88,7 +88,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   width: 6.w,
                 ),
                 Text(
-                  '${providerData.breakingNewsList.elementAt(index).publishedDate} hours ago',
+                  providerData.breakingNewsList.elementAt(index).publishedDate,
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.grey.shade300.withOpacity(
                           .9,
