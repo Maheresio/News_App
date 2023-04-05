@@ -19,18 +19,12 @@ https://drive.google.com/file/d/1sOAnlG9H4_TsAAxkHc-k1pD_UXTg3-ac/view?usp=shari
 
 ## Screenshots
 
-![App Screenshot](1.jpeg)
-
-![App Screenshot](2.jpeg)
-
-![App Screenshot](3.jpeg)
-
-![App Screenshot](4.jpeg)
-
 <table>
   <tr>
     <td><img src="1.jpeg" alt="Screenshot 1"></td>
     <td><img src="2.jpeg" alt="Screenshot 2"></td>
+    <td><img src="3.jpeg" alt="Screenshot 3"></td>
+    <td><img src="4.jpeg" alt="Screenshot 4"></td>
   </tr>
 </table>
 
