@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';
 
-class RecommendationListViewItem extends StatelessWidget {
-  const RecommendationListViewItem({super.key, required this.index});
+import '../../manager/news_provider.dart';
+
+class BookMarkListViewItem extends StatelessWidget {
+  const BookMarkListViewItem({super.key, required this.index});
 
   final int index;
   @override

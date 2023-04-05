@@ -1,16 +1,18 @@
 class RecommendationModel {
   final String category;
-  final String publisher;
+  final String author;
   final String imageUrl;
   final String profileImageUrl;
-  final int publishedTime;
+  final String publishedDate;
   final String title;
+  bool isFavorite;
 
   RecommendationModel(
       {required this.category,
+      this.isFavorite = false,
       required this.profileImageUrl,
-      required this.publisher,
+      required this.author,
       required this.imageUrl,
-      required this.publishedTime,
+      required this.publishedDate,
       required this.title});
 }

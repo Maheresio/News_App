@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import '../../view/bottom_navigation_bar.dart';
 import '../../view/news_details_view.dart';
+import '../helpers/custom_transition_page.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
@@ -17,8 +18,17 @@ abstract class AppRouter {
       GoRoute(
         path: kNewsDetailsView,
         builder: (context, state) {
-          return const NewsDetailsView();
+          return NewsDetailsView(
+            data: state.extra as Map<String, dynamic>,
+          );
         },
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: NewsDetailsView(
+            data: state.extra as Map<String, dynamic>,
+          ),
+        ),
       ),
     ],
   );

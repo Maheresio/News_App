@@ -1,11 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
+import '../../manager/news_provider.dart';
 import '../../view/widgets/custom_blurred_app_bar_icon.dart';
+import '../utils/app_strings.dart';
 
-SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
+SliverAppBar customDetailsAppBar(BuildContext context,String listType,int index) {
+  
+      final providerData = Provider.of<NewsProvider>(context, listen: false);
+
+   return SliverAppBar(
       leadingWidth: 58.w,
+      collapsedHeight: 60.h,
       leading: Padding(
         padding: EdgeInsetsDirectional.only(start: 15.w),
         child: const CustomBlurredAppBarIcon(
@@ -38,8 +46,14 @@ SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
               decoration: BoxDecoration(
                 color: Colors.white,
                 image: DecorationImage(
-                  image: const NetworkImage(
-                    'https://images.giant-bicycles.com/npxjlknouzmeri0mnboz/preview.jpg',
+                  image:  NetworkImage(
+                    listType == AppStrings.kBreakingNews
+                                  ? providerData.breakingNewsList
+                                      .elementAt(index)
+                                      .imageUrl
+                                  : providerData.recommendationList
+                                      .elementAt(index)
+                                      .imageUrl,
                   ),
                   colorFilter: ColorFilter.mode(
                     Colors.black.withOpacity(0.4),
@@ -68,7 +82,13 @@ SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
                         vertical: 4.h,
                       ),
                       child: Text(
-                        'sports',
+                         listType == AppStrings.kBreakingNews
+                                  ? providerData.breakingNewsList
+                                      .elementAt(index)
+                                      .category
+                                  : providerData.recommendationList
+                                      .elementAt(index)
+                                      .category,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                               color: Colors.white,
                             ),
@@ -81,7 +101,13 @@ SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
                   Text(
                     overflow: TextOverflow.ellipsis,
                     maxLines: 3,
-                    'Alexander wears mofified helmet in road racesAlexander wears mofified helmet in road racesAlexander wears mofified helmet in road racesAlexander wears mofified helmet in road races',
+                     listType == AppStrings.kBreakingNews
+                                  ? providerData.breakingNewsList
+                                      .elementAt(index)
+                                      .title
+                                  : providerData.recommendationList
+                                      .elementAt(index)
+                                      .title,
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           color: Colors.white.withOpacity(.9),
                           fontWeight: FontWeight.normal,
@@ -111,7 +137,14 @@ SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
                         width: 6.w,
                       ),
                       Text(
-                        '6 hours ago',
+                         listType == AppStrings.kBreakingNews
+                                  ? '${providerData.breakingNewsList
+                                      .elementAt(index)
+                                      .publishedDate} hours ago'
+                                  : providerData.recommendationList
+                                      .elementAt(index)
+                                      .publishedDate
+                       ,
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               color: Colors.grey.shade300.withOpacity(
                                 .9,
@@ -131,3 +164,4 @@ SliverAppBar customDetailsAppBar(BuildContext context) => SliverAppBar(
         ),
       ),
     );
+}

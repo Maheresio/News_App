@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/view/widgets/recommendation_list_view_item.dart';
+import 'package:provider/provider.dart';
+
 import '../../core/utils/app_router.dart';
 import '../../core/utils/app_strings.dart';
 import '../../manager/news_provider.dart';
-import 'package:provider/provider.dart';
 
-
-class RecommendationListView extends StatelessWidget {
-  const RecommendationListView({super.key});
+class BookMarkListView extends StatelessWidget {
+  const BookMarkListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<NewsProvider>(
+    return   Consumer<NewsProvider>(
       builder: (context, value, _) => Expanded(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -34,6 +34,6 @@ class RecommendationListView extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );;
   }
 }

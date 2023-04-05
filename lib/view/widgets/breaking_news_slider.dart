@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/utils/app_router.dart';
+import 'package:news_app/core/utils/app_strings.dart';
 import '../../manager/news_provider.dart';
 import 'breaking_news_slider_item.dart';
 import 'package:provider/provider.dart';
-
 
 class BreakingNewsSlider extends StatelessWidget {
   const BreakingNewsSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<NewsProvider>(context, listen: false);
-    return CarouselSlider.builder(
-      itemCount: providerData.breakingNewsList.length,
-      itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-          BreakingNewsSliderItem(
-        index: itemIndex,
-      ),
-      options: CarouselOptions(
-        autoPlay: true,
-        onPageChanged: (index, reason) => providerData.toggleSlides(index),
-        enlargeCenterPage: true,
-        viewportFraction: .8,
-        initialPage: 0,
-      ),
-    );
+    return Consumer<NewsProvider>(
+        builder: (context, value, _) => CarouselSlider.builder(
+              itemCount: value.breakingNewsList.length,
+              itemBuilder:
+                  (BuildContext context, int itemIndex, int pageViewIndex) =>
+                      InkWell(
+                onTap: () => GoRouter.of(context).push(
+                  AppRouter.kNewsDetailsView,
+                  extra: {
+                    'type': AppStrings.kBreakingNews,
+                    'index': itemIndex,
+                  },
+                ),
+                child: BreakingNewsSliderItem(
+                  index: itemIndex,
+                ),
+              ),
+              options: CarouselOptions(
+                autoPlay: true,
+                onPageChanged: (index, reason) => value.toggleSlides(index),
+                enlargeCenterPage: true,
+                viewportFraction: .8,
+                initialPage: 0,
+              ),
+            ));
   }
 }

@@ -63,20 +63,20 @@ class NewsProvider with ChangeNotifier {
   List<RecommendationModel> recommendationList = [
     RecommendationModel(
       category: 'Science',
-      publisher: 'Charlotte Van Campenhout',
+      author: 'Charlotte Van Campenhout',
       imageUrl:
           'https://www.reuters.com/resizer/zEPmcPBxuxWQXyQWEjxdyoUuxkc=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/QDOL5LNRENNRDO2MNKRDASPVYQ.jpg',
-      publishedTime: 6,
+      publishedDate: 'Feb 27,2023',
       title: 'Giant meatball of extinct mammoth unveiled in The Netherlands',
       profileImageUrl:
           'https://www.shutterstock.com/image-photo/close-headshot-portrait-picture-smiling-260nw-1733598437.jpg',
     ),
     RecommendationModel(
       category: 'Markets',
-      publisher: 'Andrea Shalal',
+      author: 'Andrea Shalal',
       imageUrl:
           'https://www.reuters.com/resizer/7-KDts1mEThT-LXlPSVnbWs-YjI=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FRKPAO4B7NODJIHWN3GJU4M55Y.jpg',
-      publishedTime: 18,
+      publishedDate: 'Feb 27,2023',
       title:
           'Biden says White House response to banking stress is \'not over yet',
       profileImageUrl:
@@ -84,50 +84,50 @@ class NewsProvider with ChangeNotifier {
     ),
     RecommendationModel(
       category: 'Autos & Transportation',
-      publisher: 'REUTERS',
+      author: 'REUTERS',
       imageUrl:
           'https://www.reuters.com/resizer/SluhnP5DyfRhGpLZjC9mMjIO-kQ=/848x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/PVPJAERBJBKRJDZCCW5NUY3RWU.jpg',
-      publishedTime: 5,
+      publishedDate: 'Feb 27,2023',
       title: 'EV startup Lucid to cut about 18% of its workforce',
       profileImageUrl:
           'https://pbs.twimg.com/profile_images/1485050791488483328/UNJ05AV8_400x400.jpg',
     ),
     RecommendationModel(
       category: 'Retail & Consumer',
-      publisher: 'The Guardian',
+      author: 'The Guardian',
       imageUrl:
           'https://www.reuters.com/resizer/bIGBNTSAuEUoC76lwDmeVgz4HN4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/OWXY4ERELVIJDMCO3F6D4W3X5U.jpg',
-      publishedTime: 6,
+      publishedDate: 'Feb 27,2023',
       title: 'AMC Entertainment shares jump on report Amazon exploring a deal',
       profileImageUrl:
           'https://media.istockphoto.com/id/1300972573/photo/pleasant-young-indian-woman-freelancer-consult-client-via-video-call.jpg?s=612x612&w=0&k=20&c=cbjgWR58DgUUETP6a0kpeiKTCxwJydyvXZXPeNTEOxg=',
     ),
     RecommendationModel(
       category: 'Technology',
-      publisher: 'The Guardian',
+      author: 'The Guardian',
       imageUrl:
           'https://www.reuters.com/resizer/tS92rW2RdWlOzQL2r5PEWAWnhgM=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/DKJ3VR6KGBJQ5LUJINCOASQSWU.jpg',
-      publishedTime: 12,
+      publishedDate: 'Feb 27,2023',
       title: 'Apple launches \'buy now, pay later\' service in US',
       profileImageUrl:
           'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
     ),
     RecommendationModel(
       category: 'Science',
-      publisher: 'Charlotte Van Campenhout',
+      author: 'Charlotte Van Campenhout',
       imageUrl:
           'https://www.reuters.com/resizer/zEPmcPBxuxWQXyQWEjxdyoUuxkc=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/QDOL5LNRENNRDO2MNKRDASPVYQ.jpg',
-      publishedTime: 6,
+      publishedDate: 'Feb 27,2023',
       title: 'Giant meatball of extinct mammoth unveiled in The Netherlands',
       profileImageUrl:
           'https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg',
     ),
     RecommendationModel(
       category: 'Markets',
-      publisher: 'Andrea Shalal',
+      author: 'Andrea Shalal',
       imageUrl:
           'https://www.reuters.com/resizer/7-KDts1mEThT-LXlPSVnbWs-YjI=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FRKPAO4B7NODJIHWN3GJU4M55Y.jpg',
-      publishedTime: 18,
+      publishedDate: 'Feb 27,2023',
       title:
           'Biden says White House response to banking stress is \'not over yet',
       profileImageUrl:
@@ -135,33 +135,36 @@ class NewsProvider with ChangeNotifier {
     ),
     RecommendationModel(
       category: 'Autos & Transportation',
-      publisher: 'REUTERS',
+      author: 'REUTERS',
       imageUrl:
           'https://www.reuters.com/resizer/SluhnP5DyfRhGpLZjC9mMjIO-kQ=/848x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/PVPJAERBJBKRJDZCCW5NUY3RWU.jpg',
-      publishedTime: 5,
+      publishedDate: 'Feb 27,2023',
       title: 'EV startup Lucid to cut about 18% of its workforce',
       profileImageUrl:
           'https://pbs.twimg.com/profile_images/1485050791488483328/UNJ05AV8_400x400.jpg',
     ),
     RecommendationModel(
       category: 'Retail & Consumer',
-      publisher: 'The Guardian',
+      author: 'The Guardian',
       imageUrl:
           'https://www.reuters.com/resizer/bIGBNTSAuEUoC76lwDmeVgz4HN4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/OWXY4ERELVIJDMCO3F6D4W3X5U.jpg',
-      publishedTime: 6,
+      publishedDate: 'Feb 27,2023',
       title: 'AMC Entertainment shares jump on report Amazon exploring a deal',
       profileImageUrl:
           'https://media.istockphoto.com/id/1300972573/photo/pleasant-young-indian-woman-freelancer-consult-client-via-video-call.jpg?s=612x612&w=0&k=20&c=cbjgWR58DgUUETP6a0kpeiKTCxwJydyvXZXPeNTEOxg=',
     ),
     RecommendationModel(
       category: 'Technology',
-      publisher: 'The Guardian',
+      author: 'The Guardian',
       imageUrl:
           'https://www.reuters.com/resizer/tS92rW2RdWlOzQL2r5PEWAWnhgM=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/DKJ3VR6KGBJQ5LUJINCOASQSWU.jpg',
-      publishedTime: 12,
+      publishedDate: 'Feb 27,2023',
       title: 'Apple launches \'buy now, pay later\' service in US',
       profileImageUrl:
           'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
     ),
   ];
+
+
+
 }

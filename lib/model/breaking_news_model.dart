@@ -6,10 +6,12 @@ class BreakingNewsModel {
   final int publishedDate;
   final String title;
   final String description;
+  bool isFavorite;
 
   BreakingNewsModel({
+    this.isFavorite = false,
     required this.category,
-   required this.description,
+    required this.description,
     required this.author,
     required this.imageUrl,
     this.isVerified = false,

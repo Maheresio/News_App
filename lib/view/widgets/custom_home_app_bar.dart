@@ -18,6 +18,7 @@ class CustomHomeAppBar extends StatelessWidget {
           customHomeAppBarIcon(
             icon: FontAwesomeIcons.bars,
             onPressed: () {},
+            heroTag: 'btn1',
           ),
           const Spacer(),
           Padding(
@@ -25,10 +26,15 @@ class CustomHomeAppBar extends StatelessWidget {
             child: customHomeAppBarIcon(
               icon: FontAwesomeIcons.magnifyingGlass,
               onPressed: () {},
+              heroTag: 'btn2',
             ),
           ),
           customHomeAppBarIcon(
-              icon: FontAwesomeIcons.bell, onPressed: () {}, isNotified: true),
+            icon: FontAwesomeIcons.bell,
+            onPressed: () {},
+            isNotified: true,
+            heroTag: 'btn3',
+          ),
         ],
       ),
     );

@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/utils/app_strings.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/helpers/custom_details_app_bar.dart';
+import '../../manager/news_provider.dart';
 
 class NewsDetailsViewBody extends StatelessWidget {
-  const NewsDetailsViewBody({super.key});
+  const NewsDetailsViewBody({super.key, required this.data});
+  final Map<String, dynamic> data;
 
   @override
   Widget build(BuildContext context) {
+    final providerData = Provider.of<NewsProvider>(context, listen: false);
+    final int index = data['index'];
+    final listType = data['type'];
+
     return NestedScrollView(
       headerSliverBuilder: (context, innerBoxIsScrolled) =>
-          [customDetailsAppBar(context)],
+          [customDetailsAppBar(context, listType, index)],
       body: CustomScrollView(
         slivers: <Widget>[
           SliverFillRemaining(
@@ -31,13 +39,25 @@ class NewsDetailsViewBody extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           backgroundImage: NetworkImage(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/2048px-CNN_International_logo.svg.png'),
+                              listType == AppStrings.kBreakingNews
+                                  ? providerData.breakingNewsList
+                                      .elementAt(index)
+                                      .imageUrl
+                                  : providerData.recommendationList
+                                      .elementAt(index)
+                                      .imageUrl),
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          'CNN Indonesia',
+                          listType == AppStrings.kBreakingNews
+                              ? providerData.breakingNewsList
+                                  .elementAt(index)
+                                  .author
+                              : providerData.recommendationList
+                                  .elementAt(index)
+                                  .author,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
@@ -59,7 +79,11 @@ class NewsDetailsViewBody extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        'Several lawmakers, both Several lawmakers, both Several lawmakers, both Several lawmakers, both Several lawmakers, both Several lawmakers, both Several lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics oSeveral lawmakers, both allies and critics of Donald Trump, have issued statements following the former presidents arraignment Tuesday.Trump personally pleaded not guilty in a Manhattan court to 34 felony counts of falsifying business records in the first degree after hearing charges against him stemming from a hush money payment to an adult film actress in 2016 Heres how lawmakers are reacting:GOP Sen. Mitt Romney, a sharp Trump critic, criticized what he called Manhattan District Attorney Alvin Bragg’s overreach, and said it sets a "dangerous precedent.""I believe President Trump’s character and conduct make him unfit for office," Romney said in a statement. "Even so, I believe the New York prosecutor has stretched to reach felony criminal charges in order to fit a political agenda. No one is above the law, not even former presidents, but everyone is entitled to equal treatment under the law. The prosecutor’s overreach sets a dangerous precedent for criminalizing political opponents and damages the public’s faith in our justice system." ',
+                        listType == AppStrings.kBreakingNews
+                            ? providerData.breakingNewsList
+                                .elementAt(index)
+                                .description
+                            : 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
                         style:
                             Theme.of(context).textTheme.titleMedium!.copyWith(
                                   fontWeight: FontWeight.w400,
