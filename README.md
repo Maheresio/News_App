@@ -19,11 +19,11 @@ https://drive.google.com/file/d/1sOAnlG9H4_TsAAxkHc-k1pD_UXTg3-ac/view?usp=shari
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/18a4QZYGa_CeHcg_Om8fVtZXJ_IWZ3b2V/view?usp=sharing)
+![App Screenshot](1.jpeg)
 
-![App Screenshot](https://drive.google.com/file/d/1XH0KiZOIZtcdBHwosc78uibPvYO7-vIx/view?usp=sharing)
+![App Screenshot](2.jpeg)
 
-![App Screenshot](https://drive.google.com/file/d/1_x_3GZ6s8k5WbdMNdrH4BMO_fqVEbmiZ/view?usp=sharing)
+![App Screenshot](3.jpeg)
 
-![App Screenshot](https://drive.google.com/file/d/1sS37EKRwsW-NVrgUfofZBU1fgHJnAGRD/view?usp=sharing)
+![App Screenshot](4.jpeg)
 
