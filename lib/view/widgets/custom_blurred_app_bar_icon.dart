@@ -6,12 +6,14 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
   final IconData iconData;
   final double iconSize;
   final double blurSigma;
+  final void Function()? onPressed;
 
   const CustomBlurredAppBarIcon({
     Key? key,
     required this.iconData,
     this.iconSize = 25,
     this.blurSigma = 2,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -34,8 +36,9 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
               icon: Icon(
                 iconData,
                 size: iconSize,
+                color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: onPressed,
               color: Colors.white,
             ),
           ),

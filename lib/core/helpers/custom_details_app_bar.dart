@@ -1,25 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:news_app/model/news_model.dart';
+import 'package:provider/provider.dart';
 
+import '../../manager/news_provider.dart';
 import '../../view/widgets/custom_blurred_app_bar_icon.dart';
 
 SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
+  final providerData = Provider.of<NewsProvider>(context);
+
   return SliverAppBar(
     leadingWidth: 58.w,
     collapsedHeight: 60.h,
     leading: Padding(
       padding: EdgeInsetsDirectional.only(start: 15.w),
-      child: const CustomBlurredAppBarIcon(
+      child: CustomBlurredAppBarIcon(
         iconData: CupertinoIcons.chevron_left,
+        onPressed: () => GoRouter.of(context).pop(),
       ),
     ),
     actions: [
       Padding(
         padding: EdgeInsetsDirectional.only(end: 4.w),
-        child: const CustomBlurredAppBarIcon(
-          iconData: CupertinoIcons.bookmark,
+        child: CustomBlurredAppBarIcon(
+          iconData: newsItem.isFavorite
+              ? CupertinoIcons.bookmark_fill
+              : CupertinoIcons.bookmark,
+          onPressed: () {
+            
+            providerData.toggleBookMark(newsItem);
+
+          },
         ),
       ),
       Padding(

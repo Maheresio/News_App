@@ -10,7 +10,9 @@ class BookMarkListViewItem extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<NewsProvider>(context, listen: false);
+    final providerData = Provider.of<NewsProvider>(
+      context,
+    );
 
     return SizedBox(
       height: 100.h,

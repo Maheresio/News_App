@@ -8,6 +8,39 @@ class NewsProvider with ChangeNotifier {
     this.index = index;
     notifyListeners();
   }
+  
+  void toggleBookMark(NewsModel newsItem) {
+    newsItem.isFavorite = !newsItem.isFavorite;
+    _addAndRemovefromBookMarkList(newsItem);
+    notifyListeners();
+  }
+
+  void _addAndRemovefromBookMarkList(NewsModel newsItem) {
+    int index = _findById(newsItem);
+    if (bookMarkList.isNotEmpty && index != -1) {
+      removeFromBookMarkList(index);
+    } else {
+      addToBookMarkList(newsItem);
+    }
+    notifyListeners();
+  }
+
+  int _findById(NewsModel newsItem) {
+    int index = -1;
+    index = bookMarkList.indexWhere((element) => element.id == newsItem.id);
+    notifyListeners();
+    return index;
+  }
+
+  void removeFromBookMarkList(int index) {
+    bookMarkList.removeAt(index);
+    notifyListeners();
+  }
+
+  void addToBookMarkList(NewsModel newsItem) {
+    bookMarkList.add(newsItem);
+    notifyListeners();
+  }
 
   List<NewsModel> breakingNewsList = [
     NewsModel(

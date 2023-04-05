@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_app/core/helpers/show_alert_dialog.dart';
 import 'package:news_app/view/widgets/bookmark_list_view_item.dart';
 import 'package:provider/provider.dart';
 
@@ -13,28 +14,23 @@ class BookMarkListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<NewsProvider>(
-      builder: (context, value, _) => Expanded(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: ListView.separated(
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) => InkWell(
-              onTap: () => GoRouter.of(context).push(
-                AppRouter.kNewsDetailsView,
-                extra: value.bookMarkList.elementAt(
-                  index,
-                ),
-              ),
-              child: BookMarkListViewItem(
-                index: index,
-              ),
-            ),
-            itemCount: value.recommendationList.length,
-            scrollDirection: Axis.vertical,
-            separatorBuilder: (context, index) => SizedBox(
-              height: 12.h,
+      builder: (context, value, _) => ListView.separated(
+        physics: const BouncingScrollPhysics(),
+        itemBuilder: (context, index) => InkWell(
+          onTap: () => GoRouter.of(context).push(
+            AppRouter.kNewsDetailsView,
+            extra: value.bookMarkList.elementAt(
+              index,
             ),
           ),
+          child: BookMarkListViewItem(
+            index: index,
+          ),
+        ),
+        itemCount: value.bookMarkList.length,
+        scrollDirection: Axis.vertical,
+        separatorBuilder: (context, index) => SizedBox(
+          height: 12.h,
         ),
       ),
     );
