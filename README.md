@@ -27,3 +27,10 @@ https://drive.google.com/file/d/1sOAnlG9H4_TsAAxkHc-k1pD_UXTg3-ac/view?usp=shari
 
 ![App Screenshot](4.jpeg)
 
+<table>
+  <tr>
+    <td><img src="1.jpeg" alt="Screenshot 1"></td>
+    <td><img src="2.jpeg" alt="Screenshot 2"></td>
+  </tr>
+</table>
+
