@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/view/widgets/recommendation_list_view_item.dart';
+import 'recommendation_list_view_item.dart';
 import '../../core/utils/app_router.dart';
 import '../../manager/news_provider.dart';
 import 'package:provider/provider.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/model/news_model.dart';
+import '../../model/news_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../manager/news_provider.dart';

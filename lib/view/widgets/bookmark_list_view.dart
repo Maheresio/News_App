@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/core/helpers/show_alert_dialog.dart';
-import 'package:news_app/view/widgets/bookmark_list_view_item.dart';
+import '../../core/helpers/show_alert_dialog.dart';
+import 'bookmark_list_view_item.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/utils/app_router.dart';

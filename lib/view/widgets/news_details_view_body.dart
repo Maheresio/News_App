@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/model/news_model.dart';
 
 import '../../core/helpers/custom_details_app_bar.dart';
+import '../../model/news_model.dart';
 
 class NewsDetailsViewBody extends StatelessWidget {
   const NewsDetailsViewBody({super.key, required this.newsItem});
