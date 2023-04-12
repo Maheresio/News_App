@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/helpers/convert_timestamp.dart';
 import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {
@@ -9,7 +10,6 @@ class BreakingNewsSliderItem extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-
     final blocData = BlocProvider.of<BreakingNewsCubit>(context, listen: false);
     return Container(
       width: double.infinity,
@@ -90,7 +90,8 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   width: 6.w,
                 ),
                 Text(
-                  blocData.breakingNewsList.elementAt(index).publishedAt!,
+                  convertTimeStamp(
+                      blocData.breakingNewsList.elementAt(index).publishedAt!),
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.grey.shade300.withOpacity(
                           .9,
