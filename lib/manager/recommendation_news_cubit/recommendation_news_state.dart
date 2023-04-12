@@ -9,7 +9,11 @@ abstract class RecommendationNewsState extends Equatable {
 
 class RecommendationNewsInitial extends RecommendationNewsState {}
 
-class RecommendationNewsSuccess extends RecommendationNewsState {}
+class RecommendationNewsSuccess extends RecommendationNewsState {
+  final List<NewsModel> recommendationList;
+
+  const RecommendationNewsSuccess(this.recommendationList);
+}
 
 class RecommendationNewsFailure extends RecommendationNewsState {
   final String errorMsg;
