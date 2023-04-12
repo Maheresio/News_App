@@ -1,16 +1,30 @@
-# news_app
 
-A new Flutter project.
+# News App
 
-## Getting Started
+a news mobile app provides users with a convenient and accessible way to stay up-to-date on the latest news and events. By providing a personalized and customizable news feed, these apps allow users to easily access the stories and information that matter most to them.
 
-This project is a starting point for a Flutter application.
+## Demo
 
-A few resources to get you started if this is your first Flutter project:
+https://drive.google.com/file/d/1sOAnlG9H4_TsAAxkHc-k1pD_UXTg3-ac/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- Bookmarking and saving
+- Breaking News
+- Recommendation News
+- Cross platform
+
+
+
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="1.jpeg" alt="Screenshot 1"></td>
+    <td><img src="2.jpeg" alt="Screenshot 2"></td>
+    <td><img src="3.jpeg" alt="Screenshot 3"></td>
+    <td><img src="4.jpeg" alt="Screenshot 4"></td>
+  </tr>
+</table>
+
