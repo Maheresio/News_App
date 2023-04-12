@@ -13,6 +13,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
         child: Padding(
       padding: EdgeInsets.symmetric(vertical: 16.h),

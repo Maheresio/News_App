@@ -9,12 +9,16 @@ abstract class BreakingNewsState extends Equatable {
 
 class BreakingNewsInitial extends BreakingNewsState {}
 
-class BreakingNewsSuccess extends BreakingNewsState {}
+class BreakingNewsSuccess extends BreakingNewsState {
+  final List<NewsModel> breakingNewsList;
+
+  const BreakingNewsSuccess(this.breakingNewsList);
+}
 
 class BreakingNewsFailure extends BreakingNewsState {
   final String errorMsg;
 
- const BreakingNewsFailure(this.errorMsg);
+  const BreakingNewsFailure(this.errorMsg);
 }
 
 class BreakingNewsLoading extends BreakingNewsState {}

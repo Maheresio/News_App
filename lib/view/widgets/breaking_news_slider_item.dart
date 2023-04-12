@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../manager/news_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {
   const BreakingNewsSliderItem({super.key, required this.index});
@@ -9,7 +9,8 @@ class BreakingNewsSliderItem extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<NewsProvider>(context, listen: false);
+
+    final blocData = BlocProvider.of<BreakingNewsCubit>(context, listen: false);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -17,7 +18,8 @@ class BreakingNewsSliderItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
           image: NetworkImage(
-            providerData.breakingNewsList.elementAt(index).imageUrl,
+            blocData.breakingNewsList.elementAt(index).urlToImage ??
+                'https://picsum.photos/250?image=9',
           ),
           colorFilter: ColorFilter.mode(
             Colors.black.withOpacity(0.4),
@@ -47,7 +49,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   vertical: 4.h,
                 ),
                 child: Text(
-                  providerData.breakingNewsList.elementAt(index).category,
+                  'US',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Colors.white,
                       ),
@@ -59,7 +61,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
               children: [
                 Text(
                   overflow: TextOverflow.ellipsis,
-                  providerData.breakingNewsList.elementAt(index).author,
+                  blocData.breakingNewsList.elementAt(index).source!.name!,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.grey.shade300.withOpacity(.9),
                         fontWeight: FontWeight.w100,
@@ -88,7 +90,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   width: 6.w,
                 ),
                 Text(
-                  providerData.breakingNewsList.elementAt(index).publishedDate,
+                  blocData.breakingNewsList.elementAt(index).publishedAt!,
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.grey.shade300.withOpacity(
                           .9,
@@ -105,7 +107,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
               child: Text(
                 overflow: TextOverflow.ellipsis,
                 maxLines: 3,
-                providerData.breakingNewsList.elementAt(index).title,
+                blocData.breakingNewsList.elementAt(index).title!,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Colors.white.withOpacity(.9),
                       fontWeight: FontWeight.normal,
