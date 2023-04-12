@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/helpers/convert_timestamp.dart';
+import 'package:news_app/core/utils/app_assets.dart';
 import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {
@@ -19,7 +20,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
         image: DecorationImage(
           image: NetworkImage(
             blocData.breakingNewsList.elementAt(index).urlToImage ??
-                'https://picsum.photos/250?image=9',
+                AppAssets.placeholderImg,
           ),
           colorFilter: ColorFilter.mode(
             Colors.black.withOpacity(0.4),
@@ -59,13 +60,15 @@ class BreakingNewsSliderItem extends StatelessWidget {
             const Spacer(),
             Row(
               children: [
-                Text(
-                  overflow: TextOverflow.ellipsis,
-                  blocData.breakingNewsList.elementAt(index).source!.name!,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Colors.grey.shade300.withOpacity(.9),
-                        fontWeight: FontWeight.w100,
-                      ),
+                Flexible(
+                  child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    blocData.breakingNewsList.elementAt(index).source!.name!,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Colors.grey.shade300.withOpacity(.9),
+                          fontWeight: FontWeight.w100,
+                        ),
+                  ),
                 ),
                 SizedBox(
                   width: 6.w,
@@ -90,7 +93,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   width: 6.w,
                 ),
                 Text(
-                  convertTimeStamp(
+                  toDayMonthYearHour(
                       blocData.breakingNewsList.elementAt(index).publishedAt!),
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.grey.shade300.withOpacity(
