@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../../model/news_model.dart';
+import '../../model/news_model/news_model.dart';
 import '../../view/bottom_navigation_bar.dart';
 import '../../view/news_details_view.dart';
 import '../helpers/custom_transition_page.dart';

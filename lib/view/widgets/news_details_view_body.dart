@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/utils/app_assets.dart';
 
 import '../../core/helpers/custom_details_app_bar.dart';
-import '../../model/news_model.dart';
+import '../../model/news_model/news_model.dart';
 
 class NewsDetailsViewBody extends StatelessWidget {
   const NewsDetailsViewBody({super.key, required this.newsItem});
@@ -37,14 +38,14 @@ class NewsDetailsViewBody extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: NetworkImage(
-                            newsItem.profileImageUrl,
+                            AppAssets.profileImg,
                           ),
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          newsItem.author,
+                          newsItem.source!.name!,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
@@ -65,7 +66,7 @@ class NewsDetailsViewBody extends StatelessWidget {
                       height: 15.h,
                     ),
                     Text(
-                      newsItem.description,
+                      newsItem.description??newsItem.description!,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                             height: 1.5,

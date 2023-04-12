@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../model/news_model.dart';
+import 'package:news_app/core/helpers/convert_timestamp.dart';
 import 'package:provider/provider.dart';
 
 import '../../manager/news_provider.dart';
+import '../../model/news_model/news_model.dart';
 import '../../view/widgets/custom_blurred_app_bar_icon.dart';
 
 SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
@@ -25,13 +26,11 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
       Padding(
         padding: EdgeInsetsDirectional.only(end: 4.w),
         child: CustomBlurredAppBarIcon(
-          iconData: newsItem.isFavorite
-              ? CupertinoIcons.bookmark_fill
-              : CupertinoIcons.bookmark,
+          iconData:
+              CupertinoIcons.bookmark_fill,
+              // : CupertinoIcons.bookmark,
           onPressed: () {
-            
-            providerData.toggleBookMark(newsItem);
-
+           // providerData.toggleBookMark(newsItem);
           },
         ),
       ),
@@ -55,7 +54,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
               color: Colors.white,
               image: DecorationImage(
                 image: NetworkImage(
-                  newsItem.imageUrl,
+                  newsItem.urlToImage!,
                 ),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
@@ -84,7 +83,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       vertical: 4.h,
                     ),
                     child: Text(
-                      newsItem.category,
+                      'Exclusive',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: Colors.white,
                           ),
@@ -97,7 +96,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                 Text(
                   overflow: TextOverflow.ellipsis,
                   maxLines: 3,
-                  newsItem.title,
+                  newsItem.title!,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: Colors.white.withOpacity(.9),
                         fontWeight: FontWeight.normal,
@@ -127,7 +126,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       width: 6.w,
                     ),
                     Text(
-                      newsItem.publishedDate,
+                      toDayMonthYear(newsItem.publishedAt!),
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: Colors.grey.shade300.withOpacity(
                               .9,
