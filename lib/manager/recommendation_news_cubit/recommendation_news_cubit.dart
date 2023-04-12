@@ -11,7 +11,9 @@ class RecommendationNewsCubit extends Cubit<RecommendationNewsState> {
   final NewsRepo newsRepo;
 
   Future<void> getRecommendationNews() async {
-    emit(BreakingNewsLoading());
-    await newsRepo.getRecommendationNews();
+    emit(RecommendationNewsLoading());
+    final result = await newsRepo.getRecommendationNews();
+    result.fold((failure) => emit(RecommendationNewsFailure(failure.errorMsg)),
+        (news) => emit(RecommendationNewsSuccess()));
   }
 }

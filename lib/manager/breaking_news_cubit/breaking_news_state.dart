@@ -11,6 +11,10 @@ class BreakingNewsInitial extends BreakingNewsState {}
 
 class BreakingNewsSuccess extends BreakingNewsState {}
 
-class BreakingNewsFailure extends BreakingNewsState {}
+class BreakingNewsFailure extends BreakingNewsState {
+  final String errorMsg;
+
+ const BreakingNewsFailure(this.errorMsg);
+}
 
 class BreakingNewsLoading extends BreakingNewsState {}

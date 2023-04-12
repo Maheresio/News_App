@@ -13,6 +13,8 @@ class BreakingNewsCubit extends Cubit<BreakingNewsState> {
 
   Future<void> getBreakingNews() async {
     emit(BreakingNewsLoading());
-    await newsRepo.getBreakingNews();
+    final result = await newsRepo.getBreakingNews();
+    result.fold((failure) => emit(BreakingNewsFailure(failure.errorMsg)),
+        (news) => emit(BreakingNewsSuccess()));
   }
 }

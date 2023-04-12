@@ -1,7 +1,7 @@
-import 'package:news_app/model/news_model/news_model.dart';
+import 'package:dartz/dartz.dart';
+import 'package:news_app/core/utils/app_constants.dart';
 
-abstract class NewsRepo
-{
-  Future<List<NewsModel>> getBreakingNews();
-  Future<List<NewsModel>> getRecommendationNews();
+abstract class NewsRepo {
+  EitherType getBreakingNews();
+  EitherType getRecommendationNews();
 }
