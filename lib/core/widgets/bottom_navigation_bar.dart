@@ -67,7 +67,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
       const HomeView(),
       const DiscoverView(),
       const BookMarkView(),
-      const HomeView(),
+      const Center(
+        child: Text('Not yet'),
+      ),
     ];
   }
 
