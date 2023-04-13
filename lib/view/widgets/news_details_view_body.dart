@@ -66,7 +66,7 @@ class NewsDetailsViewBody extends StatelessWidget {
                       height: 15.h,
                     ),
                     Text(
-                      newsItem.description??newsItem.description!,
+                      newsItem.content??newsItem.description??'No Details',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                             height: 1.5,

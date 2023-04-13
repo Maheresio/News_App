@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
 import 'bookmark_list_view_item.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/utils/app_router.dart';
-import '../../manager/news_provider.dart';
 
 class BookMarkListView extends StatelessWidget {
   const BookMarkListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<NewsProvider>(
+    return Consumer<BookMarkProvider>(
       builder: (context, value, _) => ListView.separated(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => InkWell(

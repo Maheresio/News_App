@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/utils/api_service.dart';
+import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
 import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
 import 'package:news_app/manager/recommendation_news_cubit/recommendation_news_cubit.dart';
 import 'package:news_app/repo/news_repo.dart';
@@ -32,7 +33,7 @@ Future<void> main() async {
           Dio dio = Dio();
           ApiService apiService = ApiService(dio);
           NewsRepo newsRepo = NewsRepoImpl(apiService);
-          return MultiBlocProvider(
+          return MultiProvider(
             providers: [
               BlocProvider<BreakingNewsCubit>(
                   create: (context) =>
@@ -40,8 +41,10 @@ Future<void> main() async {
               BlocProvider<RecommendationNewsCubit>(
                   create: (context) => RecommendationNewsCubit(newsRepo)
                     ..getRecommendationNews()),
-              ListenableProvider<NewsProvider>(
+              ChangeNotifierProvider<NewsProvider>(
                   create: (context) => NewsProvider()),
+              ChangeNotifierProvider<BookMarkProvider>(
+                  create: (context) => BookMarkProvider()),
             ],
             child: MaterialApp.router(
               debugShowCheckedModeBanner: false,

@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/helpers/convert_timestamp.dart';
+import 'package:news_app/core/utils/app_assets.dart';
+import 'package:news_app/core/utils/app_strings.dart';
+import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../manager/news_provider.dart';
 import '../../model/news_model/news_model.dart';
 import '../../view/widgets/custom_blurred_app_bar_icon.dart';
 
 SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
-  final providerData = Provider.of<NewsProvider>(context);
+  final providerData = Provider.of<BookMarkProvider>(context);
+  final int index = providerData.findByTitle(newsItem);
 
   return SliverAppBar(
     leadingWidth: 58.w,
@@ -26,11 +29,11 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
       Padding(
         padding: EdgeInsetsDirectional.only(end: 4.w),
         child: CustomBlurredAppBarIcon(
-          iconData:
-              CupertinoIcons.bookmark_fill,
-              // : CupertinoIcons.bookmark,
+          iconData: index == -1
+              ? CupertinoIcons.bookmark
+              : CupertinoIcons.bookmark_fill,
           onPressed: () {
-           // providerData.toggleBookMark(newsItem);
+            providerData.toggleBookMark(newsItem);
           },
         ),
       ),
@@ -54,7 +57,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
               color: Colors.white,
               image: DecorationImage(
                 image: NetworkImage(
-                  newsItem.urlToImage!,
+                  newsItem.urlToImage ?? AppAssets.placeholderImg,
                 ),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
@@ -83,7 +86,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       vertical: 4.h,
                     ),
                     child: Text(
-                      'Exclusive',
+                      AppStrings.kExclusive,
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: Colors.white,
                           ),

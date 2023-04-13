@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/helpers/convert_timestamp.dart';
 import 'package:news_app/core/utils/app_assets.dart';
+import 'package:news_app/core/utils/app_strings.dart';
 import 'package:news_app/manager/recommendation_news_cubit/recommendation_news_cubit.dart';
 
 class RecommendationListViewItem extends StatelessWidget {
@@ -41,7 +42,7 @@ class RecommendationListViewItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Exclusive',
+                    AppStrings.kExclusive,
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           color: Colors.grey.shade500,
                         ),
@@ -68,7 +69,7 @@ class RecommendationListViewItem extends StatelessWidget {
                       Expanded(
                         child: Text(
                           blocData.recommendationList.elementAt(index).author ??
-                              'Private',
+                              AppStrings.kPrivate,
                           overflow: TextOverflow.ellipsis,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(

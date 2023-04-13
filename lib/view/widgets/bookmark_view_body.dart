@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/utils/app_strings.dart';
+import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
 import 'bookmark_list_view.dart';
 import 'package:provider/provider.dart';
-
-import '../../manager/news_provider.dart';
 
 class BookMarkViewBody extends StatelessWidget {
   const BookMarkViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final providerData = Provider.of<NewsProvider>(context);
+    final providerData = Provider.of<BookMarkProvider>(context);
 
     return providerData.bookMarkList.isEmpty
         ? const Center(
@@ -25,7 +25,7 @@ class BookMarkViewBody extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    'Bookmark',
+                    AppStrings.kBookmark,
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                           color: Colors.black,
                         ),
