@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_app/core/widgets/featured_list_view_item.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/utils/app_router.dart';
 import '../../manager/bookmark_provider.dart';
-import 'bookmark_list_view_item.dart';
-
 
 class BookMarkListView extends StatelessWidget {
   const BookMarkListView({super.key});
@@ -19,12 +18,10 @@ class BookMarkListView extends StatelessWidget {
         itemBuilder: (context, index) => InkWell(
           onTap: () => GoRouter.of(context).push(
             AppRouter.kNewsDetailsView,
-            extra: value.bookMarkList.elementAt(
-              index,
-            ),
+            extra: value.bookMarkList.elementAt(index),
           ),
-          child: BookMarkListViewItem(
-            index: index,
+          child: FeaturedListViewItem(
+            newsItem: value.bookMarkList.elementAt(index),
           ),
         ),
         itemCount: value.bookMarkList.length,

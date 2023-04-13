@@ -28,10 +28,11 @@ class BookMarkViewBody extends StatelessWidget {
                     AppStrings.kBookmark,
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                           color: Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 40.h,
                   ),
                   const Expanded(
                     child: BookMarkListView(),

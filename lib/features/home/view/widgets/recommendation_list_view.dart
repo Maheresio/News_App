@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_app/core/widgets/featured_list_view_item.dart';
 
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/widgets/custom_progress_indicator.dart';
 import '../../../../core/widgets/error_data_widget.dart';
 import '../../managers/recommendation_news_cubit/recommendation_news_cubit.dart';
-import 'recommendation_list_view_item.dart';
 
 class RecommendationListView extends StatelessWidget {
   const RecommendationListView({super.key});
@@ -30,7 +30,8 @@ class RecommendationListView extends StatelessWidget {
                   AppRouter.kNewsDetailsView,
                   extra: state.recommendationList.elementAt(index),
                 ),
-                child: RecommendationListViewItem(index: index),
+                child: FeaturedListViewItem(
+                    newsItem: state.recommendationList.elementAt(index)),
               ),
               itemCount: 20,
               scrollDirection: Axis.vertical,
