@@ -43,12 +43,16 @@ Future<void> main() async {
               ChangeNotifierProvider<BookMarkProvider>(
                   create: (context) => BookMarkProvider()),
             ],
-            child: MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData.light().copyWith(
-                textTheme: GoogleFonts.dmSansTextTheme(),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              child: MaterialApp.router(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData.light().copyWith(
+                  textTheme: GoogleFonts.dmSansTextTheme(),
+                ),
+                routerConfig: AppRouter.router,
               ),
-              routerConfig: AppRouter.router,
             ),
           );
         }),
