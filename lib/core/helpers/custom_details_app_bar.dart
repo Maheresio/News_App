@@ -56,7 +56,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
               color: Colors.white,
               image: DecorationImage(
                 image: CachedNetworkImageProvider(
-                  newsItem.urlToImage ?? AppAssets.placeholderImg,
+                  newsItem.urlToImage ?? AppAssets.kPlaceholderImg,
                 ),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
@@ -111,7 +111,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                   children: [
                     Text(
                       overflow: TextOverflow.ellipsis,
-                      'Trending',
+                      AppStrings.kTrending,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             color: Colors.grey.shade300.withOpacity(.9),
                             fontWeight: FontWeight.w100,

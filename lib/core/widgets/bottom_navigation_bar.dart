@@ -68,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       const DiscoverView(),
       const BookMarkView(),
       const Center(
-        child: Text('Not yet'),
+        child: Text('Coming soon...'),
       ),
     ];
   }

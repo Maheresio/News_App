@@ -1,5 +1,5 @@
 abstract class ApiConstants {
-  static const String _apiKey = '83f80dfbf82846cf9652dc5615e97fba';
+  static const String _apiKey = '708465389c8845688b057f35b7b519bc';
   static const String _baseUrl = 'https://newsapi.org/v2';
 
   static const String breakingNewsUrl =

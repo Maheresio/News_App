@@ -41,7 +41,7 @@ class NewsDetailsViewBody extends StatelessWidget {
                       children: [
                         const CircleAvatar(
                           backgroundImage: CachedNetworkImageProvider(
-                            AppAssets.profileImg,
+                            AppAssets.kProfileImg,
                           ),
                         ),
                         SizedBox(width: 4.w),
