@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/utils/app_router.dart';
 import 'recommendation_list_view.dart';
 
 import '../../../../core/utils/app_strings.dart';
@@ -24,7 +26,10 @@ class HomeViewBody extends StatelessWidget {
           ),
           CustomListViewHeader(
             headerText: AppStrings.kBreakingNews,
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kViewAllView,
+                  extra: AppStrings.kBreakingNews);
+            },
           ),
           SizedBox(
             height: 8.h,
@@ -39,12 +44,17 @@ class HomeViewBody extends StatelessWidget {
           ),
           CustomListViewHeader(
             headerText: AppStrings.kRecommendation,
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kViewAllView,
+                  extra: AppStrings.kRecommendation);
+            },
           ),
           SizedBox(
             height: 8.h,
           ),
-          const RecommendationListView(),
+          const RecommendationListView(
+            itemCount: 20,
+          ),
         ],
       ),
     ));

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/utils/app_strings.dart';
 import '../../../../core/helpers/convert_timestamp.dart';
 import '../../../../core/utils/app_assets.dart';
 
@@ -26,7 +27,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                         .elementAt(index)
                         .urlToImage!
                         .contains('aljazeera')
-                ? AppAssets.placeholderImg
+                ? AppAssets.kPlaceholderImg
                 : blocData.breakingNewsList.elementAt(index).urlToImage!,
           ),
           colorFilter: ColorFilter.mode(
@@ -57,7 +58,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
                   vertical: 4.h,
                 ),
                 child: Text(
-                  'US',
+                  AppStrings.kTrending,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Colors.white,
                       ),

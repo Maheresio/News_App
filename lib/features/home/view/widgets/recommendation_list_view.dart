@@ -10,7 +10,9 @@ import '../../../../core/widgets/error_data_widget.dart';
 import '../../managers/recommendation_news_cubit/recommendation_news_cubit.dart';
 
 class RecommendationListView extends StatelessWidget {
-  const RecommendationListView({super.key});
+  const RecommendationListView({super.key, required this.itemCount});
+
+  final int itemCount;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class RecommendationListView extends StatelessWidget {
                 child: FeaturedListViewItem(
                     newsItem: state.recommendationList.elementAt(index)),
               ),
-              itemCount: 20,
+              itemCount: itemCount,
               scrollDirection: Axis.vertical,
               separatorBuilder: (context, index) => SizedBox(
                 height: 12.h,
