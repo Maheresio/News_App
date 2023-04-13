@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/convert_timestamp.dart';
@@ -5,7 +6,6 @@ import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../manager/bookmark_provider.dart';
 import 'package:provider/provider.dart';
-
 
 class BookMarkListViewItem extends StatelessWidget {
   const BookMarkListViewItem({super.key, required this.index});
@@ -28,7 +28,7 @@ class BookMarkListViewItem extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
-                image: NetworkImage(
+                image: CachedNetworkImageProvider(
                   providerData.bookMarkList.elementAt(index).urlToImage ??
                       AppAssets.placeholderImg,
                 ),
@@ -61,7 +61,7 @@ class BookMarkListViewItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage:
-                            const NetworkImage(AppAssets.profileImg),
+                            const CachedNetworkImageProvider(AppAssets.profileImg),
                         radius: 10.w,
                       ),
                       SizedBox(
