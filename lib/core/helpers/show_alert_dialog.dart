@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 showAlertDialog(BuildContext context, VoidCallback? onPressed) {
-  // set up the button
   Widget yesButton = TextButton(
     onPressed: () {
       onPressed;
@@ -17,7 +16,6 @@ showAlertDialog(BuildContext context, VoidCallback? onPressed) {
     },
   );
 
-  // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("Delete an item"),
     content: const Text("Are you sure ?"),

@@ -1,8 +1,8 @@
 import 'package:go_router/go_router.dart';
-import 'package:news_app/features/home/view/view_all_view.dart';
-import 'package:news_app/features/splash/view/splash_view.dart';
 
 import '../../features/details/view/news_details_view.dart';
+import '../../features/home/view/view_all_view.dart';
+import '../../features/splash/view/splash_view.dart';
 import '../../models/news_model.dart';
 import '../helpers/custom_transition_page.dart';
 import '../widgets/bottom_navigation_bar.dart';

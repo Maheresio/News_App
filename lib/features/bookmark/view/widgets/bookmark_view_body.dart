@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
 import '../../../../core/helpers/custom_home_app_bar_icon.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../manager/bookmark_provider.dart';
 import 'bookmark_list_view.dart';
-import 'package:provider/provider.dart';
 
 class BookMarkViewBody extends StatelessWidget {
   const BookMarkViewBody({super.key});

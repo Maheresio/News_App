@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/app_assets.dart';
 
 import '../../../../core/helpers/custom_details_app_bar.dart';
+import '../../../../core/utils/app_assets.dart';
 import '../../../../models/news_model.dart';
 
 class NewsDetailsViewBody extends StatelessWidget {

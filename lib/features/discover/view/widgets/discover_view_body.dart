@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/core/helpers/custom_home_app_bar_icon.dart';
-import 'package:news_app/core/utils/app_strings.dart';
-import 'package:news_app/features/discover/manager/discover_cubit.dart';
-import 'package:news_app/features/discover/view/widgets/discover_list_view.dart';
+import '../../../../core/helpers/custom_home_app_bar_icon.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../manager/discover_cubit.dart';
+import 'discover_list_view.dart';
 
 class DiscoverViewBody extends StatefulWidget {
   const DiscoverViewBody({super.key});

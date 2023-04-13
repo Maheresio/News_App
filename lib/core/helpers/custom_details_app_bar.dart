@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'convert_timestamp.dart';
-import '../utils/app_assets.dart';
-import '../utils/app_strings.dart';
-import '../../features/bookmark/manager/bookmark_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../features/bookmark/manager/bookmark_provider.dart';
 import '../../models/news_model.dart';
+import '../utils/app_assets.dart';
+import '../utils/app_strings.dart';
 import '../widgets/custom_blurred_app_bar_icon.dart';
+import 'convert_timestamp.dart';
 
 SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
   final providerData = Provider.of<BookMarkProvider>(context);

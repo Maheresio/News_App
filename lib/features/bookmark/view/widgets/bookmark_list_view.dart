@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/core/helpers/custom_alert_dialog.dart';
-import 'package:news_app/core/widgets/featured_list_view_item.dart';
+import '../../../../core/helpers/custom_alert_dialog.dart';
+import '../../../../core/widgets/featured_list_view_item.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/utils/app_router.dart';
