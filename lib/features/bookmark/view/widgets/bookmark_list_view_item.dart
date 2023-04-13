@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/core/helpers/convert_timestamp.dart';
-import 'package:news_app/core/utils/app_assets.dart';
-import 'package:news_app/core/utils/app_strings.dart';
-import 'package:news_app/manager/recommendation_news_cubit/recommendation_news_cubit.dart';
+import '../../../../core/helpers/convert_timestamp.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../manager/bookmark_provider.dart';
+import 'package:provider/provider.dart';
 
-class RecommendationListViewItem extends StatelessWidget {
-  const RecommendationListViewItem({super.key, required this.index});
+
+class BookMarkListViewItem extends StatelessWidget {
+  const BookMarkListViewItem({super.key, required this.index});
 
   final int index;
   @override
   Widget build(BuildContext context) {
-    final blocData =
-        BlocProvider.of<RecommendationNewsCubit>(context, listen: false);
+    final providerData = Provider.of<BookMarkProvider>(
+      context,
+    );
 
     return SizedBox(
       height: 100.h,
@@ -27,7 +29,7 @@ class RecommendationListViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 image: NetworkImage(
-                  blocData.recommendationList.elementAt(index).urlToImage ??
+                  providerData.bookMarkList.elementAt(index).urlToImage ??
                       AppAssets.placeholderImg,
                 ),
                 fit: BoxFit.cover,
@@ -48,7 +50,7 @@ class RecommendationListViewItem extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    blocData.recommendationList.elementAt(index).title!,
+                    providerData.bookMarkList.elementAt(index).title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -58,9 +60,8 @@ class RecommendationListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: const NetworkImage(
-                          AppAssets.profileImg,
-                        ),
+                        backgroundImage:
+                            const NetworkImage(AppAssets.profileImg),
                         radius: 10.w,
                       ),
                       SizedBox(
@@ -68,8 +69,10 @@ class RecommendationListViewItem extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          blocData.recommendationList.elementAt(index).author ??
-                              AppStrings.kPrivate,
+                          providerData.bookMarkList
+                              .elementAt(index)
+                              .source!
+                              .name!,
                           overflow: TextOverflow.ellipsis,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
@@ -89,7 +92,7 @@ class RecommendationListViewItem extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          toDayMonthYear(blocData.recommendationList
+                          toDayMonthYear(providerData.bookMarkList
                               .elementAt(index)
                               .publishedAt!),
                           overflow: TextOverflow.ellipsis,

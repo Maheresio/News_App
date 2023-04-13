@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../core/utils/app_colors.dart';
-import '../../manager/news_provider.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../manager/news_provider.dart';
+import '../../managers/breaking_news_cubit/breaking_news_cubit.dart';
+
+
 
 class CustomAnimatedDots extends StatelessWidget {
   const CustomAnimatedDots({super.key});

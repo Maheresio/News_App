@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'bookmark_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import 'home_view.dart';
+import '../../features/bookmark/view/bookmark_view.dart';
+import '../../features/home/view/home_view.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../repo/news_repo_impl.dart';
+import '../../repos/news_repo_impl.dart';
 import 'api_service.dart';
 
 final getIt = GetIt.instance;

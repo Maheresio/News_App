@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/core/helpers/convert_timestamp.dart';
-import 'package:news_app/core/utils/app_assets.dart';
-import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
+import '../../../../core/helpers/convert_timestamp.dart';
+import '../../../../core/utils/app_assets.dart';
+
+import '../../managers/breaking_news_cubit/breaking_news_cubit.dart';
 
 class BreakingNewsSliderItem extends StatelessWidget {
   const BreakingNewsSliderItem({super.key, required this.index});

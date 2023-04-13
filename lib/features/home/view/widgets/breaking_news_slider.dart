@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
-import 'package:news_app/manager/news_provider.dart';
-import 'package:news_app/view/widgets/custom_progress_indicator.dart';
-import 'package:news_app/view/widgets/error_data_widget.dart';
+import '../../../../manager/news_provider.dart';
+
 import 'package:provider/provider.dart';
-import '../../core/utils/app_router.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../../../core/widgets/error_data_widget.dart';
+import '../../managers/breaking_news_cubit/breaking_news_cubit.dart';
 import 'breaking_news_slider_item.dart';
 
 class BreakingNewsSlider extends StatelessWidget {

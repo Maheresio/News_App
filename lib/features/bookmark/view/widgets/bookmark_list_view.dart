@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
-import 'bookmark_list_view_item.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/utils/app_router.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../manager/bookmark_provider.dart';
+import 'bookmark_list_view_item.dart';
+
 
 class BookMarkListView extends StatelessWidget {
   const BookMarkListView({super.key});

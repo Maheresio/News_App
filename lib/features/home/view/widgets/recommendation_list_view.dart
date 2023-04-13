@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/manager/recommendation_news_cubit/recommendation_news_cubit.dart';
-import 'package:news_app/view/widgets/custom_progress_indicator.dart';
-import 'package:news_app/view/widgets/error_data_widget.dart';
+
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../../../core/widgets/error_data_widget.dart';
+import '../../managers/recommendation_news_cubit/recommendation_news_cubit.dart';
 import 'recommendation_list_view_item.dart';
-import '../../core/utils/app_router.dart';
 
 class RecommendationListView extends StatelessWidget {
   const RecommendationListView({super.key});

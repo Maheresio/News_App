@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news_app/core/utils/service_locator.dart';
-import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
-import 'package:news_app/manager/breaking_news_cubit/breaking_news_cubit.dart';
-import 'package:news_app/manager/recommendation_news_cubit/recommendation_news_cubit.dart';
-import 'package:news_app/repo/news_repo_impl.dart';
+import 'core/utils/service_locator.dart';
+import 'features/bookmark/manager/bookmark_provider.dart';
+import 'repos/news_repo_impl.dart';
+import 'features/home/managers/breaking_news_cubit/breaking_news_cubit.dart';
+import 'features/home/managers/recommendation_news_cubit/recommendation_news_cubit.dart';
 import 'manager/news_provider.dart';
 import 'package:provider/provider.dart';
 // ignore: depend_on_referenced_packages

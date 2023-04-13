@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:news_app/core/error/failure.dart';
-import 'package:news_app/core/utils/api_constants.dart';
-import 'package:news_app/core/utils/api_service.dart';
-import 'package:news_app/model/news_model.dart';
-import 'package:news_app/repo/news_repo.dart';
+import '../core/error/failure.dart';
+import '../core/utils/api_constants.dart';
+import '../core/utils/api_service.dart';
+import 'news_repo.dart';
 
 import '../core/utils/app_constants.dart';
+import '../models/news_model.dart';
 
 class NewsRepoImpl implements NewsRepo {
   ApiService apiService;

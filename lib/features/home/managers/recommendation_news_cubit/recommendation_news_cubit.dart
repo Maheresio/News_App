@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../model/news_model.dart';
-import '../../repo/news_repo.dart';
+import '../../../../models/news_model.dart';
+import '../../../../repos/news_repo.dart';
 
 part 'recommendation_news_state.dart';
 

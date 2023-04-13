@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../model/news_model.dart';
+import '../../../models/news_model.dart';
 
 class BookMarkProvider with ChangeNotifier {
   List<NewsModel> bookMarkList = [];

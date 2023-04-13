@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../core/helpers/custom_home_app_bar_icon.dart';
+import '../../../../core/helpers/custom_home_app_bar_icon.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({

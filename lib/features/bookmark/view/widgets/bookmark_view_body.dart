@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/core/utils/app_strings.dart';
-import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../manager/bookmark_provider.dart';
 import 'bookmark_list_view.dart';
 import 'package:provider/provider.dart';
 
