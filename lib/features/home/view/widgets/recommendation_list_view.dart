@@ -22,25 +22,20 @@ class RecommendationListView extends StatelessWidget {
         return const ErrorDataWidget();
       }
       if (state is RecommendationNewsSuccess) {
-        return Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => InkWell(
-                onTap: () => GoRouter.of(context).push(
-                  AppRouter.kNewsDetailsView,
-                  extra: state.recommendationList.elementAt(index),
-                ),
-                child: FeaturedListViewItem(
-                    newsItem: state.recommendationList.elementAt(index)),
-              ),
-              itemCount: itemCount,
-              scrollDirection: Axis.vertical,
-              separatorBuilder: (context, index) => SizedBox(
-                height: 12.h,
-              ),
+        return ListView.separated(
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (context, index) => InkWell(
+            onTap: () => GoRouter.of(context).push(
+              AppRouter.kNewsDetailsView,
+              extra: state.recommendationList.elementAt(index),
             ),
+            child: FeaturedListViewItem(
+                newsItem: state.recommendationList.elementAt(index)),
+          ),
+          itemCount: itemCount,
+          scrollDirection: Axis.vertical,
+          separatorBuilder: (context, index) => SizedBox(
+            height: 12.h,
           ),
         );
       }

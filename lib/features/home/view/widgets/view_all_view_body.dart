@@ -18,12 +18,12 @@ class ViewAllViewBody extends StatelessWidget {
     final blocData =
         BlocProvider.of<RecommendationNewsCubit>(context, listen: false);
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
@@ -49,12 +49,14 @@ class ViewAllViewBody extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          listType == AppStrings.kRecommendation
-              ? RecommendationListView(
-                  itemCount: blocData.recommendationList.length)
-              : const BreakingNewsListView(),
-        ],
+            listType == AppStrings.kRecommendation
+                ? Expanded(
+                  child: RecommendationListView(
+                      itemCount: blocData.recommendationList.length),
+                )
+                : const BreakingNewsListView(),
+          ],
+        ),
       ),
     );
   }

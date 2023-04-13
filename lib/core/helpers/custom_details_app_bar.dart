@@ -128,7 +128,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       width: 6.w,
                     ),
                     Text(
-                      toDayMonthYear(newsItem.publishedAt!),
+                      toDayMonthYearHour(newsItem.publishedAt!),
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: Colors.grey.shade300.withOpacity(
                               .9,
