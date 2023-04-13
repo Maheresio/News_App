@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:news_app/core/error/failure.dart';
 import 'package:news_app/core/utils/api_constants.dart';
 import 'package:news_app/core/utils/api_service.dart';
-import 'package:news_app/model/news_model/news_model.dart';
+import 'package:news_app/model/news_model.dart';
 import 'package:news_app/repo/news_repo.dart';
 
 import '../core/utils/app_constants.dart';

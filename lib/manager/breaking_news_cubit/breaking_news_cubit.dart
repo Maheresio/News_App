@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:news_app/repo/news_repo.dart';
 
-import '../../model/news_model/news_model.dart';
+import '../../model/news_model.dart';
 
 part 'breaking_news_state.dart';
 

@@ -8,7 +8,7 @@ import 'package:news_app/core/utils/app_strings.dart';
 import 'package:news_app/manager/bookmark_provider/bookmark_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../model/news_model/news_model.dart';
+import '../../model/news_model.dart';
 import '../../view/widgets/custom_blurred_app_bar_icon.dart';
 
 SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
