@@ -44,7 +44,7 @@ class _DiscoverViewBodyState extends State<DiscoverViewBody> {
             customHomeAppBarIcon(
                 icon: CupertinoIcons.chevron_left, heroTag: 'btn5'),
             SizedBox(
-              height: 12.h,
+              height: 8.h,
             ),
             Text(
               AppStrings.kDiscover,

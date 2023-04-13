@@ -25,7 +25,7 @@ class FeaturedListViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 image: CachedNetworkImageProvider(
-                  newsItem.urlToImage ?? AppAssets.placeholderImg,
+                  newsItem.urlToImage ?? AppAssets.kPlaceholderImg,
                 ),
                 fit: BoxFit.cover,
               ),
@@ -56,7 +56,7 @@ class FeaturedListViewItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage: const CachedNetworkImageProvider(
-                            AppAssets.profileImg),
+                            AppAssets.kProfileImg),
                         radius: 10.w,
                       ),
                       SizedBox(

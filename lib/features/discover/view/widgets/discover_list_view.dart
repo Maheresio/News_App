@@ -17,7 +17,7 @@ class DiscoverListView extends StatelessWidget {
     return BlocBuilder<DiscoverNewsCubit, DiscoverNewsState>(
         builder: ((context, state) {
       if (state is DiscoverNewsFailure) {
-        return const ErrorDataWidget();
+        return const Expanded(child: ErrorDataWidget());
       }
       if (state is DiscoverNewsSuccess) {
         return Expanded(
