@@ -6,4 +6,7 @@ abstract class ApiConstants {
       '$_baseUrl/top-headlines?country=us&apiKey=$_apiKey';
   static const String recommendationUrl =
       '$_baseUrl/everything?q=keyword&apiKey=$_apiKey';
+      
+      static const String discoverNewsUrl =
+      '$_baseUrl/everything?domains=wsj.com&apiKey=$_apiKey';
 }

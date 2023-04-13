@@ -56,4 +56,27 @@ class NewsRepoImpl implements NewsRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+  
+  
+   @override
+  EitherType getDiscoverNews() async {
+    try {
+      final data = await apiService.get(url: ApiConstants.discoverNewsUrl);
+      List<NewsModel> discoverNewsList = [];
+
+      discoverNewsList.addAll(
+        [
+          ...data['articles'].map(
+            (item) => NewsModel.fromJson(item),
+          )
+        ],
+      );
+      return right(discoverNewsList);
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }
