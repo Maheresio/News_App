@@ -32,9 +32,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
           iconData: index == -1
               ? CupertinoIcons.bookmark
               : CupertinoIcons.bookmark_fill,
-          onPressed: () {
-            providerData.toggleBookMark(newsItem);
-          },
+          onPressed: () => providerData.toggleBookMark(newsItem),
         ),
       ),
       Padding(

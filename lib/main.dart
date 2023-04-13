@@ -18,6 +18,7 @@ import 'core/utils/app_router.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  serviceLocator();
 
   customStatusBar();
   Wakelock.enable();

@@ -6,7 +6,7 @@ import 'api_service.dart';
 
 final getIt = GetIt.instance;
 
-void setup() {
+void serviceLocator() {
   getIt.registerSingleton<Dio>(
     Dio(),
   );
