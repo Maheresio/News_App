@@ -7,7 +7,6 @@ import '../../../../core/widgets/featured_list_view_item.dart';
 import '../../manager/discover_cubit.dart';
 
 import '../../../../core/utils/app_router.dart';
-import '../../../../core/widgets/custom_progress_indicator.dart';
 import '../../../../core/widgets/error_data_widget.dart';
 
 class DiscoverListView extends StatelessWidget {
