@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ import 'package:wakelock/wakelock.dart';
 import 'core/helpers/custom_status_bar.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
+import 'core/widgets/no_internet_connection.dart';
 import 'features/bookmark/manager/bookmark_provider.dart';
 import 'features/home/managers/breaking_news_cubit/breaking_news_cubit.dart';
 import 'features/home/managers/recommendation_news_cubit/recommendation_news_cubit.dart';
@@ -46,12 +48,23 @@ Future<void> main() async {
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-              child: MaterialApp.router(
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData.light().copyWith(
-                  textTheme: GoogleFonts.dmSansTextTheme(),
-                ),
-                routerConfig: AppRouter.router,
+              child: StreamBuilder(
+                stream: Connectivity().onConnectivityChanged,
+                builder: (context, AsyncSnapshot<ConnectivityResult> snapshot) {
+                  return snapshot.data == ConnectivityResult.mobile ||
+                          snapshot.data == ConnectivityResult.wifi
+                      ? MaterialApp.router(
+                          debugShowCheckedModeBanner: false,
+                          theme: ThemeData.light().copyWith(
+                            textTheme: GoogleFonts.dmSansTextTheme(),
+                          ),
+                          routerConfig: AppRouter.router,
+                        )
+                      : const MaterialApp(
+                          home: InternetNotConnected(),
+                          debugShowCheckedModeBanner: false,
+                        );
+                },
               ),
             ),
           );
