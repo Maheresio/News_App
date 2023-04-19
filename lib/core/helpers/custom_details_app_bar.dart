@@ -56,7 +56,10 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
               color: Colors.white,
               image: DecorationImage(
                 image: CachedNetworkImageProvider(
-                  newsItem.urlToImage ?? AppAssets.kPlaceholderImg,
+                  newsItem.urlToImage == null ||
+                          newsItem.urlToImage!.contains('aljazeera')
+                      ? AppAssets.kPlaceholderImg
+                      : newsItem.urlToImage!,
                 ),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
