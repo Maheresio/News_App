@@ -16,14 +16,16 @@ class RecommendationNewsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
           children: [
             CustomListViewHeader(
               headerText: AppStrings.kRecommendation,
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kViewAllView,
-                    extra: AppStrings.kRecommendation);
+                GoRouter.of(context).push(
+                  AppRouter.kViewAllView,
+                  extra: AppStrings.kRecommendation,
+                );
               },
             ),
             SizedBox(

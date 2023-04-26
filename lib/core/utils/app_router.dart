@@ -26,7 +26,10 @@ abstract class AppRouter {
           return const BottomNavBar();
         },
         pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
-            context: context, state: state, child: const BottomNavBar()),
+          context: context,
+          state: state,
+          child: const BottomNavBar(),
+        ),
       ),
       GoRoute(
         path: kNewsDetailsView,

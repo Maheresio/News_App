@@ -147,7 +147,6 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
               ],
             ),
           ),
-         
         ],
       ),
     ),

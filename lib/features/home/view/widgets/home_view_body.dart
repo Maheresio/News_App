@@ -11,21 +11,22 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.h),
-      child: Column(
-        children: [
-          const CustomHomeAppBar(),
-          SizedBox(
-            height: 16.h,
-          ),
-          const BreakingNewsSection(),
-          SizedBox(
-            height: 16.h,
-          ),
-          const RecommendationNewsSection(),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 16.h),
+        child: Column(
+          children: [
+            const CustomHomeAppBar(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const BreakingNewsSection(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const RecommendationNewsSection(),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

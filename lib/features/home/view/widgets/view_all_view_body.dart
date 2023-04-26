@@ -17,6 +17,7 @@ class ViewAllViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final blocData =
         BlocProvider.of<RecommendationNewsCubit>(context, listen: false);
+
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -30,9 +31,10 @@ class ViewAllViewBody extends StatelessWidget {
                   height: 16.h,
                 ),
                 customHomeAppBarIcon(
-                    icon: CupertinoIcons.chevron_left,
-                    heroTag: 'btn6',
-                    onPressed: () => Navigator.of(context).pop()),
+                  icon: CupertinoIcons.chevron_left,
+                  heroTag: 'btn6',
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
                 SizedBox(
                   height: 8.h,
                 ),
@@ -51,9 +53,10 @@ class ViewAllViewBody extends StatelessWidget {
             ),
             listType == AppStrings.kRecommendation
                 ? Expanded(
-                  child: RecommendationListView(
-                      itemCount: blocData.recommendationList.length),
-                )
+                    child: RecommendationListView(
+                      itemCount: blocData.recommendationList.length,
+                    ),
+                  )
                 : const BreakingNewsListView(),
           ],
         ),

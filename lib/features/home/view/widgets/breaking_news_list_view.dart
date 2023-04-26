@@ -15,31 +15,34 @@ class BreakingNewsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BreakingNewsCubit, BreakingNewsState>(
-        builder: ((context, state) {
-      if (state is BreakingNewsFailure) {
-        return const ErrorDataWidget();
-      }
-      if (state is BreakingNewsSuccess) {
-        return Expanded(
-          child: ListView.separated(
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) => InkWell(
-              onTap: () => GoRouter.of(context).push(
-                AppRouter.kNewsDetailsView,
-                extra: state.breakingNewsList.elementAt(index),
+      builder: ((context, state) {
+        if (state is BreakingNewsFailure) {
+          return const ErrorDataWidget();
+        }
+        if (state is BreakingNewsSuccess) {
+          return Expanded(
+            child: ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => InkWell(
+                onTap: () => GoRouter.of(context).push(
+                  AppRouter.kNewsDetailsView,
+                  extra: state.breakingNewsList.elementAt(index),
+                ),
+                child: FeaturedListViewItem(
+                  newsItem: state.breakingNewsList.elementAt(index),
+                ),
               ),
-              child: FeaturedListViewItem(
-                  newsItem: state.breakingNewsList.elementAt(index)),
+              itemCount: state.breakingNewsList.length,
+              scrollDirection: Axis.vertical,
+              separatorBuilder: (context, index) => SizedBox(
+                height: 12.h,
+              ),
             ),
-            itemCount: state.breakingNewsList.length,
-            scrollDirection: Axis.vertical,
-            separatorBuilder: (context, index) => SizedBox(
-              height: 12.h,
-            ),
-          ),
-        );
-      }
-      return const Expanded(child: CustomShimmerLoading());
-    }));
+          );
+        }
+
+        return const Expanded(child: CustomShimmerLoading());
+      }),
+    );
   }
 }

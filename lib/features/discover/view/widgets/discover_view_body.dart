@@ -15,12 +15,12 @@ class DiscoverViewBody extends StatefulWidget {
 }
 
 class _DiscoverViewBodyState extends State<DiscoverViewBody> {
- late TextEditingController searchController ;
+  late TextEditingController searchController;
 
   @override
   void initState() {
     super.initState();
-     searchController = TextEditingController();
+    searchController = TextEditingController();
   }
 
   @override
@@ -32,6 +32,7 @@ class _DiscoverViewBodyState extends State<DiscoverViewBody> {
   @override
   Widget build(BuildContext context) {
     final blocData = BlocProvider.of<DiscoverNewsCubit>(context);
+
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -42,7 +43,9 @@ class _DiscoverViewBodyState extends State<DiscoverViewBody> {
               height: 16.h,
             ),
             customHomeAppBarIcon(
-                icon: CupertinoIcons.chevron_left, heroTag: 'btn5'),
+              icon: CupertinoIcons.chevron_left,
+              heroTag: 'btn5',
+            ),
             SizedBox(
               height: 8.h,
             ),

@@ -1,4 +1,3 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -16,15 +15,15 @@ class BreakingNewsCubit extends Cubit<BreakingNewsState> {
 
   List<NewsModel> get breakingNewsList => [..._breakingNewsList];
 
- 
-
   Future<void> getBreakingNews() async {
     emit(BreakingNewsLoading());
     final result = await newsRepo.getBreakingNews();
-    result.fold((failure) => emit(BreakingNewsFailure(failure.errorMsg)),
-        (news) {
-      _breakingNewsList = news;
-      emit(BreakingNewsSuccess(news));
-    });
+    result.fold(
+      (failure) => emit(BreakingNewsFailure(failure.errorMsg)),
+      (news) {
+        _breakingNewsList = news;
+        emit(BreakingNewsSuccess(news));
+      },
+    );
   }
 }

@@ -18,33 +18,35 @@ class BookMarkListView extends StatelessWidget {
       builder: (context, value, _) => ListView.separated(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => InkWell(
-            onTap: () => GoRouter.of(context).push(
-                  AppRouter.kNewsDetailsView,
-                  extra: value.bookMarkList.elementAt(index),
-                ),
-            child: Dismissible(
-              direction: DismissDirection.endToStart,
-              key: Key(value.bookMarkList.elementAt(index).title!),
-              onDismissed: (direction) {
-                value.removeFromBookMarkList(index);
-              },
-              confirmDismiss: (DismissDirection direction) async {
-                return await showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return customAlertDialog(context);
-                    });
-              },
-              background: Container(
-                color: Colors.red,
-                alignment: Alignment.centerRight,
-                padding: EdgeInsetsDirectional.only(end: 10.w),
-                child: const Icon(CupertinoIcons.delete),
-              ),
-              child: FeaturedListViewItem(
-                newsItem: value.bookMarkList.elementAt(index),
-              ),
-            )),
+          onTap: () => GoRouter.of(context).push(
+            AppRouter.kNewsDetailsView,
+            extra: value.bookMarkList.elementAt(index),
+          ),
+          child: Dismissible(
+            direction: DismissDirection.endToStart,
+            key: Key(value.bookMarkList.elementAt(index).title!),
+            onDismissed: (direction) {
+              value.removeFromBookMarkList(index);
+            },
+            confirmDismiss: (DismissDirection direction) async {
+              return await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return customAlertDialog(context);
+                },
+              );
+            },
+            background: Container(
+              color: Colors.red,
+              alignment: Alignment.centerRight,
+              padding: EdgeInsetsDirectional.only(end: 10.w),
+              child: const Icon(CupertinoIcons.delete),
+            ),
+            child: FeaturedListViewItem(
+              newsItem: value.bookMarkList.elementAt(index),
+            ),
+          ),
+        ),
         itemCount: value.bookMarkList.length,
         scrollDirection: Axis.vertical,
         separatorBuilder: (context, index) => SizedBox(

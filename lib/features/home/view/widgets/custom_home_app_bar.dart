@@ -17,7 +17,7 @@ class CustomHomeAppBar extends StatelessWidget {
         children: [
           customHomeAppBarIcon(
             icon: FontAwesomeIcons.bars,
-            onPressed: () {},
+            onPressed: null,
             heroTag: 'btn1',
           ),
           const Spacer(),
@@ -25,13 +25,13 @@ class CustomHomeAppBar extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(end: 8.w),
             child: customHomeAppBarIcon(
               icon: FontAwesomeIcons.magnifyingGlass,
-              onPressed: () {},
+              onPressed: null,
               heroTag: 'btn2',
             ),
           ),
           customHomeAppBarIcon(
             icon: FontAwesomeIcons.bell,
-            onPressed: () {},
+            onPressed: null,
             isNotified: true,
             heroTag: 'btn3',
           ),

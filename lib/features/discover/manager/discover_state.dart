@@ -22,5 +22,3 @@ class DiscoverNewsFailure extends DiscoverNewsState {
 }
 
 class DiscoverNewsLoading extends DiscoverNewsState {}
-
-

@@ -17,37 +17,39 @@ class BreakingNewsSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BreakingNewsCubit, BreakingNewsState>(
-        buildWhen: (previous, current) => previous != current,
-        builder: (context, state) {
-          if (state is BreakingNewsFailure) {
-            return const ErrorDataWidget();
-          } else if (state is BreakingNewsSuccess) {
-            return CarouselSlider.builder(
-              itemCount: 6,
-              itemBuilder:
-                  (BuildContext context, int itemIndex, int pageViewIndex) =>
-                      InkWell(
-                onTap: () => GoRouter.of(context).push(
-                  AppRouter.kNewsDetailsView,
-                  extra: state.breakingNewsList.elementAt(itemIndex),
-                ),
-                child: BreakingNewsSliderItem(
-                  index: itemIndex,
-                ),
+      buildWhen: (previous, current) => previous != current,
+      builder: (context, state) {
+        if (state is BreakingNewsFailure) {
+          return const ErrorDataWidget();
+        } else if (state is BreakingNewsSuccess) {
+          return CarouselSlider.builder(
+            itemCount: 6,
+            itemBuilder:
+                (BuildContext context, int itemIndex, int pageViewIndex) =>
+                    InkWell(
+              onTap: () => GoRouter.of(context).push(
+                AppRouter.kNewsDetailsView,
+                extra: state.breakingNewsList.elementAt(itemIndex),
               ),
-              options: CarouselOptions(
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  Provider.of<NewsProvider>(context, listen: false)
-                      .toggleSlides(index);
-                },
-                enlargeCenterPage: true,
-                viewportFraction: .8,
-                initialPage: 0,
+              child: BreakingNewsSliderItem(
+                index: itemIndex,
               ),
-            );
-          }
-          return const CustomProgressIndicator();
-        });
+            ),
+            options: CarouselOptions(
+              autoPlay: true,
+              onPageChanged: (index, reason) {
+                Provider.of<NewsProvider>(context, listen: false)
+                    .toggleSlides(index);
+              },
+              enlargeCenterPage: true,
+              viewportFraction: .8,
+              initialPage: 0,
+            ),
+          );
+        }
+
+        return const CustomProgressIndicator();
+      },
+    );
   }
 }

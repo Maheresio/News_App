@@ -20,24 +20,27 @@ class DiscoverNewsCubit extends Cubit<DiscoverNewsState> {
   void filterNews(String value) {
     filteredNewsList = _discoverNewsList
         .where(
-            (item) => item.title!.toLowerCase().contains(value.toLowerCase()))
+          (item) => item.title!.toLowerCase().contains(value.toLowerCase()),
+        )
         .toList();
   }
 
   Future<void> getDiscoverNews(String? value) async {
     emit(DiscoverNewsLoading());
     final result = await newsRepo.getDiscoverNews();
-    result.fold((failure) => emit(DiscoverNewsFailure(failure.errorMsg)),
-        (news) {
-      _discoverNewsList = news;
+    result.fold(
+      (failure) => emit(DiscoverNewsFailure(failure.errorMsg)),
+      (news) {
+        _discoverNewsList = news;
 
-      filteredNewsList = value != null
-          ? _discoverNewsList
-              .where((item) =>
-                  item.title!.toLowerCase().contains(value.toLowerCase()))
-              .toList()
-          : news;
-      emit(DiscoverNewsSuccess(filteredNewsList));
-    });
+        filteredNewsList = value != null
+            ? _discoverNewsList
+                .where((item) =>
+                    item.title!.toLowerCase().contains(value.toLowerCase()))
+                .toList()
+            : news;
+        emit(DiscoverNewsSuccess(filteredNewsList));
+      },
+    );
   }
 }

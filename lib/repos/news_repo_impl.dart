@@ -23,14 +23,16 @@ class NewsRepoImpl implements NewsRepo {
         [
           ...data['articles'].map(
             (item) => NewsModel.fromJson(item),
-          )
+          ),
         ],
       );
+
       return right(breakingNewsList);
     } catch (e) {
       if (e is DioError) {
         return left(ServerFailure.fromDioError(e));
       }
+
       return left(ServerFailure(e.toString()));
     }
   }
@@ -45,20 +47,21 @@ class NewsRepoImpl implements NewsRepo {
         [
           ...data['articles'].map(
             (item) => NewsModel.fromJson(item),
-          )
+          ),
         ],
       );
+
       return right(recommendationNewsList);
     } catch (e) {
       if (e is DioError) {
         return left(ServerFailure.fromDioError(e));
       }
+
       return left(ServerFailure(e.toString()));
     }
   }
-  
-  
-   @override
+
+  @override
   EitherType getDiscoverNews() async {
     try {
       final data = await apiService.get(url: ApiConstants.discoverNewsUrl);
@@ -68,14 +71,16 @@ class NewsRepoImpl implements NewsRepo {
         [
           ...data['articles'].map(
             (item) => NewsModel.fromJson(item),
-          )
+          ),
         ],
       );
+
       return right(discoverNewsList);
     } catch (e) {
       if (e is DioError) {
         return left(ServerFailure.fromDioError(e));
       }
+
       return left(ServerFailure(e.toString()));
     }
   }

@@ -29,7 +29,9 @@ class BookMarkViewBody extends StatelessWidget {
                     height: 16.h,
                   ),
                   customHomeAppBarIcon(
-                      icon: CupertinoIcons.chevron_left, heroTag: 'btn7'),
+                    icon: CupertinoIcons.chevron_left,
+                    heroTag: 'btn7',
+                  ),
                   SizedBox(
                     height: 8.h,
                   ),

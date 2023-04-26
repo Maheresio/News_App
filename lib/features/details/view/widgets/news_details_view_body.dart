@@ -67,7 +67,7 @@ class NewsDetailsViewBody extends StatelessWidget {
                       height: 15.h,
                     ),
                     Text(
-                      newsItem.content??newsItem.description??'No Details',
+                      newsItem.content ?? newsItem.description ?? 'No Details',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                             height: 1.5,
@@ -77,7 +77,7 @@ class NewsDetailsViewBody extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

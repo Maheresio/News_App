@@ -22,8 +22,10 @@ class BreakingNewsSection extends StatelessWidget {
           child: CustomListViewHeader(
             headerText: AppStrings.kBreakingNews,
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kViewAllView,
-                  extra: AppStrings.kBreakingNews);
+              GoRouter.of(context).push(
+                AppRouter.kViewAllView,
+                extra: AppStrings.kBreakingNews,
+              );
             },
           ),
         ),

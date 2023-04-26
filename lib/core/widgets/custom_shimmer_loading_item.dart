@@ -83,7 +83,7 @@ class CustomShimmerLoadingItem extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

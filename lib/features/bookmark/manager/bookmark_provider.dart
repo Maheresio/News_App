@@ -9,6 +9,7 @@ class BookMarkProvider with ChangeNotifier {
     int index = -1;
     index =
         bookMarkList.indexWhere((element) => element.title == newsItem.title);
+
     return index;
   }
 

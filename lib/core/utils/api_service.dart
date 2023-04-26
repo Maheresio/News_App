@@ -7,6 +7,7 @@ class ApiService {
 
   Future<Map<String, dynamic>> get({required String url}) async {
     final response = await _dio.get(url);
+
     return response.data;
   }
 }

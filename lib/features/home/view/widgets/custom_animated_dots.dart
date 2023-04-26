@@ -8,19 +8,19 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../manager/news_provider.dart';
 import '../../managers/breaking_news_cubit/breaking_news_cubit.dart';
 
-
-
 class CustomAnimatedDots extends StatelessWidget {
   const CustomAnimatedDots({super.key});
 
   @override
   Widget build(BuildContext context) {
     final blocData = BlocProvider.of<BreakingNewsCubit>(context, listen: false);
+
     return Consumer<NewsProvider>(
       builder: ((context, value, _) {
         if (blocData.breakingNewsList.isEmpty) {
           return const SizedBox();
         }
+
         return AnimatedSmoothIndicator(
           activeIndex: value.index,
           count: 6,

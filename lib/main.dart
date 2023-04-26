@@ -27,47 +27,53 @@ Future<void> main() async {
 
   runApp(
     ScreenUtilInit(
-        designSize: const Size(360, 690),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          final newsRepo = getIt.get<NewsRepoImpl>();
-          return MultiProvider(
-            providers: [
-              BlocProvider<BreakingNewsCubit>(
-                  create: (context) =>
-                      BreakingNewsCubit(newsRepo)..getBreakingNews()),
-              BlocProvider<RecommendationNewsCubit>(
-                  create: (context) => RecommendationNewsCubit(newsRepo)
-                    ..getRecommendationNews()),
-              ChangeNotifierProvider<NewsProvider>(
-                  create: (context) => NewsProvider()),
-              ChangeNotifierProvider<BookMarkProvider>(
-                  create: (context) => BookMarkProvider()),
-            ],
-            child: GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-              child: StreamBuilder(
-                stream: Connectivity().onConnectivityChanged,
-                builder: (context, AsyncSnapshot<ConnectivityResult> snapshot) {
-                  return snapshot.data == ConnectivityResult.mobile ||
-                          snapshot.data == ConnectivityResult.wifi
-                      ? MaterialApp.router(
-                          debugShowCheckedModeBanner: false,
-                          theme: ThemeData.light().copyWith(
-                            textTheme: GoogleFonts.dmSansTextTheme(),
-                          ),
-                          routerConfig: AppRouter.router,
-                        )
-                      : const MaterialApp(
-                          home: InternetNotConnected(),
-                          debugShowCheckedModeBanner: false,
-                        );
-                },
-              ),
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        final newsRepo = getIt.get<NewsRepoImpl>();
+
+        return MultiProvider(
+          providers: [
+            BlocProvider<BreakingNewsCubit>(
+              create: (context) =>
+                  BreakingNewsCubit(newsRepo)..getBreakingNews(),
             ),
-          );
-        }),
+            BlocProvider<RecommendationNewsCubit>(
+              create: (context) =>
+                  RecommendationNewsCubit(newsRepo)..getRecommendationNews(),
+            ),
+            ChangeNotifierProvider<NewsProvider>(
+              create: (context) => NewsProvider(),
+            ),
+            ChangeNotifierProvider<BookMarkProvider>(
+              create: (context) => BookMarkProvider(),
+            ),
+          ],
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: StreamBuilder(
+              stream: Connectivity().onConnectivityChanged,
+              builder: (context, AsyncSnapshot<ConnectivityResult> snapshot) {
+                return snapshot.data == ConnectivityResult.mobile ||
+                        snapshot.data == ConnectivityResult.wifi
+                    ? MaterialApp.router(
+                        debugShowCheckedModeBanner: false,
+                        theme: ThemeData.light().copyWith(
+                          textTheme: GoogleFonts.dmSansTextTheme(),
+                        ),
+                        routerConfig: AppRouter.router,
+                      )
+                    : const MaterialApp(
+                        home: InternetNotConnected(),
+                        debugShowCheckedModeBanner: false,
+                      );
+              },
+            ),
+          ),
+        );
+      },
+    ),
   );
 }

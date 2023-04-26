@@ -56,7 +56,8 @@ class FeaturedListViewItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage: const CachedNetworkImageProvider(
-                            AppAssets.kProfileImg),
+                          AppAssets.kProfileImg,
+                        ),
                         radius: 10.w,
                       ),
                       SizedBox(

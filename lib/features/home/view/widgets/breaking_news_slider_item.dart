@@ -15,6 +15,7 @@ class BreakingNewsSliderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final blocData = BlocProvider.of<BreakingNewsCubit>(context, listen: false);
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -102,7 +103,8 @@ class BreakingNewsSliderItem extends StatelessWidget {
                 ),
                 Text(
                   toDayMonthYearHour(
-                      blocData.breakingNewsList.elementAt(index).publishedAt!),
+                    blocData.breakingNewsList.elementAt(index).publishedAt!,
+                  ),
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.grey.shade300.withOpacity(
                           .9,
