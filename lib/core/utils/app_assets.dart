@@ -1,9 +1,7 @@
 abstract class AppAssets {
-  static const String kPlaceholderImg =
-      'https://media.gettyimages.com/id/184625088/photo/breaking-news-headline.webp?s=1024x1024&w=gi&k=20&c=MnnbhD8rU_Pbq6wXmRfWvzIE3P_3fVNWekD6pErxP8A=';
+  static const String kPlaceholderImg = 'assets/placeholder.png';
 
-  static const String kProfileImg =
-      'https://media.asiaone.com/sites/default/files/styles/article_main_image/public/original_images/Feb2022/20220211_of_reuters.jpg?itok=kiMpHX5g';
+  static const String kProfileImg = 'assets/profile.jpg';
 
   static const String kSplashLogo = 'assets/splash.png';
 }

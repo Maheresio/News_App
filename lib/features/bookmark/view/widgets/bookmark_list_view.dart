@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/helpers/custom_alert_dialog.dart';
-import '../../../../core/widgets/featured_list_view_item.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../core/helpers/custom_alert_dialog.dart';
 import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/featured_list_view_item.dart';
 import '../../manager/bookmark_provider.dart';
 
 class BookMarkListView extends StatelessWidget {
@@ -23,6 +23,7 @@ class BookMarkListView extends StatelessWidget {
             extra: value.bookMarkList.elementAt(index),
           ),
           child: Dismissible(
+       
             direction: DismissDirection.endToStart,
             key: Key(value.bookMarkList.elementAt(index).title!),
             onDismissed: (direction) {
@@ -40,7 +41,7 @@ class BookMarkListView extends StatelessWidget {
               color: Colors.red,
               alignment: Alignment.centerRight,
               padding: EdgeInsetsDirectional.only(end: 10.w),
-              child: const Icon(CupertinoIcons.delete),
+              child: const Icon(CupertinoIcons.delete_solid),
             ),
             child: FeaturedListViewItem(
               newsItem: value.bookMarkList.elementAt(index),

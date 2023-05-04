@@ -1,11 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../models/news_model.dart';
 
+import '../../models/news_model.dart';
 import '../helpers/convert_timestamp.dart';
 import '../utils/app_assets.dart';
 import '../utils/app_strings.dart';
+import 'custom_image.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
   const FeaturedListViewItem({super.key, required this.newsItem});
@@ -23,13 +23,13 @@ class FeaturedListViewItem extends StatelessWidget {
             width: 120.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                image: CachedNetworkImageProvider(
-                  newsItem.urlToImage ?? AppAssets.kPlaceholderImg,
-                ),
-                fit: BoxFit.cover,
-              ),
             ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: CustomImage(
+                  imgUrl: newsItem.urlToImage,
+                  enableEffects: false,
+                )),
           ),
           Expanded(
             child: Padding(
@@ -55,10 +55,9 @@ class FeaturedListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: const CachedNetworkImageProvider(
-                          AppAssets.kProfileImg,
-                        ),
+                        backgroundColor: Colors.white,
                         radius: 10.w,
+                        child: Image.asset(AppAssets.kProfileImg),
                       ),
                       SizedBox(
                         width: 6.w,

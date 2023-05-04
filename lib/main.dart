@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:wakelock/wakelock.dart';
 
+import 'core/helpers/clear_cache.dart';
 import 'core/helpers/custom_status_bar.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
@@ -20,6 +21,7 @@ import 'repos/news_repo_impl.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  await clearCache();
   serviceLocator();
 
   customStatusBar();
