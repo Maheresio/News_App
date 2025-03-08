@@ -29,7 +29,7 @@ class FeaturedListViewItem extends StatelessWidget {
                 child: CustomImage(
                   imgUrl: newsItem.urlToImage,
                   enableEffects: false,
-                )),
+                ),),
           ),
           Expanded(
             child: Padding(
@@ -45,7 +45,7 @@ class FeaturedListViewItem extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    newsItem.title!,
+                    newsItem.title??'',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(

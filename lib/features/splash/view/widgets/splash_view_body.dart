@@ -46,12 +46,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
               color: Theme.of(context).primaryColor,
             ),
           ),
-          SizedBox(
-            height: 4.h,
-          ),
-          SlidingText(
-            slidingAnimation: _slidingAnimation,
-          ),
+          SizedBox(height: 4.h),
+          SlidingText(slidingAnimation: _slidingAnimation),
         ],
       ),
     );
@@ -60,30 +56,20 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initSlidingAnimation() {
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(
-        seconds: 4,
-      ),
+      duration: const Duration(seconds: 4),
     );
     _slidingAnimation = Tween<Offset>(
       begin: const Offset(0, 2),
       end: Offset.zero,
     ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.fastOutSlowIn,
-      ),
+      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
     );
     _controller.forward();
   }
 
   void navigateToHome() {
-    Future.delayed(
-      const Duration(
-        seconds: 4,
-      ),
-      () => GoRouter.of(context).pushReplacement(
-        AppRouter.kHomeView,
-      ),
-    );
+    Future.delayed(const Duration(seconds: 4), () {
+      if (mounted) GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+    });
   }
 }

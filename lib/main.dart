@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-// ignore: depend_on_referenced_packages
-import 'package:wakelock/wakelock.dart';
 
 import 'core/helpers/clear_cache.dart';
 import 'core/helpers/custom_status_bar.dart';
@@ -25,7 +23,6 @@ Future<void> main() async {
   serviceLocator();
 
   customStatusBar();
-  Wakelock.enable();
 
   runApp(
     ScreenUtilInit(
@@ -55,8 +52,8 @@ Future<void> main() async {
           child: GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: StreamBuilder(
-              stream: Connectivity().onConnectivityChanged,
+            child: StreamBuilder<ConnectivityResult>(
+              stream: Connectivity().onConnectivityChanged.map((results) => results.first),
               builder: (context, AsyncSnapshot<ConnectivityResult> snapshot) {
                 return snapshot.data == ConnectivityResult.mobile ||
                         snapshot.data == ConnectivityResult.wifi

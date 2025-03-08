@@ -20,28 +20,26 @@ class DiscoverListView extends StatelessWidget {
           return const Expanded(child: ErrorDataWidget());
         }
         if (state is DiscoverNewsSuccess) {
-          return Expanded(
-            child: ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => InkWell(
-                onTap: () => GoRouter.of(context).push(
-                  AppRouter.kNewsDetailsView,
-                  extra: state.discoverList.elementAt(index),
-                ),
-                child: FeaturedListViewItem(
-                  newsItem: state.discoverList.elementAt(index),
-                ),
+          return ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) => InkWell(
+              onTap: () => GoRouter.of(context).push(
+                AppRouter.kNewsDetailsView,
+                extra: state.discoverList.elementAt(index),
               ),
-              itemCount: state.discoverList.length,
-              scrollDirection: Axis.vertical,
-              separatorBuilder: (context, index) => SizedBox(
-                height: 12.h,
+              child: FeaturedListViewItem(
+                newsItem: state.discoverList.elementAt(index),
               ),
+            ),
+            itemCount: state.discoverList.length,
+            scrollDirection: Axis.vertical,
+            separatorBuilder: (context, index) => SizedBox(
+              height: 12.h,
             ),
           );
         }
 
-        return const Expanded(child: CustomShimmerLoading());
+        return CustomShimmerLoading();
       }),
     );
   }

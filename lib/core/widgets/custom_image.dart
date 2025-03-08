@@ -8,7 +8,7 @@ class CustomImage extends StatelessWidget {
   const CustomImage({
     super.key,
     required this.imgUrl,
-     this.enableEffects=true,
+    this.enableEffects = true,
   });
   final String? imgUrl;
   final bool enableEffects;
@@ -16,13 +16,16 @@ class CustomImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return imgUrl != null
         ? CachedNetworkImage(
+
             imageUrl: imgUrl!,
             errorWidget: (context, url, error) => Image(
               image: const AssetImage(AppAssets.kPlaceholderImg),
               fit: BoxFit.cover,
               colorBlendMode: enableEffects ? BlendMode.darken : null,
-              color: enableEffects ? Colors.black.withOpacity(0.6) : null,
+              color: enableEffects ? Colors.black.withOpacity(0.5) : null,
             ),
+
+            
             placeholder: (context, url) => Center(
               child: Shimmer(
                 gradient: LinearGradient(
@@ -38,13 +41,13 @@ class CustomImage extends StatelessWidget {
             ),
             fit: BoxFit.cover,
             colorBlendMode: enableEffects ? BlendMode.darken : null,
-            color: enableEffects ? Colors.black.withOpacity(0.6) : null,
+            color: enableEffects ? Colors.black.withOpacity(0.5) : null,
           )
         : Image.asset(
             AppAssets.kPlaceholderImg,
             fit: BoxFit.cover,
             colorBlendMode: enableEffects ? BlendMode.darken : null,
-            color: enableEffects ? Colors.black.withOpacity(0.6) : null,
+            color: enableEffects ? Colors.black.withOpacity(0.5) : null,
           );
   }
 }

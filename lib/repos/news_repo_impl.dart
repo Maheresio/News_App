@@ -29,7 +29,7 @@ class NewsRepoImpl implements NewsRepo {
 
       return right(breakingNewsList);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
 
@@ -53,7 +53,7 @@ class NewsRepoImpl implements NewsRepo {
 
       return right(recommendationNewsList);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
 
@@ -77,7 +77,7 @@ class NewsRepoImpl implements NewsRepo {
 
       return right(discoverNewsList);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
 

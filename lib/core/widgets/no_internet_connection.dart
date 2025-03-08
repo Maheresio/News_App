@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InternetNotConnected extends StatelessWidget {
-  const InternetNotConnected({Key? key}) : super(key: key);
+  const InternetNotConnected({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

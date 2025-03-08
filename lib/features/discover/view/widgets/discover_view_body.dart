@@ -36,58 +36,60 @@ class _DiscoverViewBodyState extends State<DiscoverViewBody> {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 16.h,
-            ),
-            customHomeAppBarIcon(
-              icon: CupertinoIcons.chevron_left,
-              heroTag: 'btn5',
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            Text(
-              AppStrings.kDiscover,
-              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+        child: NestedScrollView(
+          headerSliverBuilder:
+              (context, _) => [
+                SliverToBoxAdapter(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 16.h),
+                      customHomeAppBarIcon(
+                        icon: CupertinoIcons.chevron_left,
+                        heroTag: 'btn5',
+                      ),
+                      SizedBox(height: 8.h),
+                      Text(
+                        AppStrings.kDiscover,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.headlineLarge!.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        AppStrings.kNewsAroundWorld,
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          color: Colors.black.withOpacity(.4),
+                        ),
+                      ),
+                      SizedBox(height: 12.h),
+                      TextField(
+                        controller: searchController,
+                        decoration: InputDecoration(
+                          fillColor: Colors.blueGrey.withOpacity(.07),
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide.none,
+                          ),
+                          prefixIcon: const Icon(CupertinoIcons.search),
+                          hintText: 'Search',
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            blocData.getDiscoverNews(value);
+                          });
+                        },
+                      ),
+                      SizedBox(height: 16.h),
+                    ],
                   ),
-            ),
-            Text(
-              AppStrings.kNewsAroundWorld,
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Colors.black.withOpacity(.4),
-                  ),
-            ),
-            SizedBox(
-              height: 12.h,
-            ),
-            TextField(
-              controller: searchController,
-              decoration: InputDecoration(
-                fillColor: Colors.blueGrey.withOpacity(.07),
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide.none,
                 ),
-                prefixIcon: const Icon(CupertinoIcons.search),
-                hintText: 'Search',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  blocData.getDiscoverNews(value);
-                });
-              },
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            const DiscoverListView(),
-          ],
+              ],
+
+          body: const DiscoverListView(),
         ),
       ),
     );

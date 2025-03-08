@@ -14,30 +14,28 @@ class RecommendationNewsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Column(
-          children: [
-            CustomListViewHeader(
-              headerText: AppStrings.kRecommendation,
-              onPressed: () {
-                GoRouter.of(context).push(
-                  AppRouter.kViewAllView,
-                  extra: AppStrings.kRecommendation,
-                );
-              },
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        children: [
+          CustomListViewHeader(
+            headerText: AppStrings.kRecommendation,
+            onPressed: () {
+              GoRouter.of(context).push(
+                AppRouter.kViewAllView,
+                extra: AppStrings.kRecommendation,
+              );
+            },
+          ),
+          SizedBox(
+            height: 8.h,
+          ),
+          const Expanded(
+            child: RecommendationListView(
+              itemCount: 20,
             ),
-            SizedBox(
-              height: 8.h,
-            ),
-            const Expanded(
-              child: RecommendationListView(
-                itemCount: 20,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

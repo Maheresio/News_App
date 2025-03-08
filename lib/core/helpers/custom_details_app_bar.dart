@@ -20,28 +20,49 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
     collapsedHeight: 60.h,
     leading: Padding(
       padding: EdgeInsetsDirectional.only(start: 15.w),
-      child: IconButton(
-        icon: const Icon(CupertinoIcons.chevron_left),
-        onPressed: () => GoRouter.of(context).pop(),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withValues(alpha: 0.2),
+          shape: BoxShape.circle,
+        ),
+        child: IconButton(
+          color: Colors.white,
+          icon: const Icon(CupertinoIcons.chevron_left),
+          onPressed: () => GoRouter.of(context).pop(),
+        ),
       ),
     ),
     actions: [
       Padding(
         padding: EdgeInsetsDirectional.only(end: 4.w),
-        child: IconButton(
-          icon: Icon(
-            isBookmarked
-                ? CupertinoIcons.bookmark_fill
-                : CupertinoIcons.bookmark,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withValues(alpha: 0.2),
+            shape: BoxShape.circle,
           ),
-          onPressed: () => providerData.toggleBookMark(newsItem),
+          child: IconButton(
+            color: Colors.white,
+            icon: Icon(
+              isBookmarked
+                  ? CupertinoIcons.bookmark_fill
+                  : CupertinoIcons.bookmark,
+            ),
+            onPressed: () => providerData.toggleBookMark(newsItem),
+          ),
         ),
       ),
       Padding(
         padding: EdgeInsetsDirectional.only(end: 15.w),
-        child: IconButton(
-          icon: const Icon(CupertinoIcons.ellipsis),
-          onPressed: () {},
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withValues(alpha: 0.2),
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            color: Colors.white,
+            icon: const Icon(CupertinoIcons.ellipsis),
+            onPressed: () {},
+          ),
         ),
       ),
     ],
@@ -55,7 +76,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            CustomImage(imgUrl: newsItem.urlToImage,),
+            CustomImage(imgUrl: newsItem.urlToImage),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
               child: Column(
@@ -68,14 +89,15 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 4.h,
+                      ),
                       child: Text(
                         AppStrings.kExclusive,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge!
-                            .copyWith(color: Colors.white),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyLarge!.copyWith(color: Colors.white),
                       ),
                     ),
                   ),
@@ -85,9 +107,9 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                     maxLines: 3,
                     newsItem.title!,
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: Colors.white.withOpacity(.9),
-                          fontWeight: FontWeight.normal,
-                        ),
+                      color: Colors.white.withOpacity(.9),
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                   SizedBox(height: 8.h),
                   Row(
@@ -96,9 +118,9 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                         overflow: TextOverflow.ellipsis,
                         AppStrings.kTrending,
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              color: Colors.grey.shade300.withOpacity(.9),
-                              fontWeight: FontWeight.w100,
-                            ),
+                          color: Colors.grey.shade300.withOpacity(.9),
+                          fontWeight: FontWeight.w100,
+                        ),
                       ),
                       SizedBox(width: 6.w),
                       const CircleAvatar(
@@ -109,9 +131,9 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       Text(
                         toDayMonthYearHour(newsItem.publishedAt!),
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              color: Colors.grey.shade300.withOpacity(.9),
-                              fontWeight: FontWeight.w100,
-                            ),
+                          color: Colors.grey.shade300.withOpacity(.9),
+                          fontWeight: FontWeight.w100,
+                        ),
                       ),
                     ],
                   ),
@@ -125,4 +147,3 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
     ),
   );
 }
-
