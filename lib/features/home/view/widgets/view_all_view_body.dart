@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../managers/recommendation_news_cubit/recommendation_news_cubit.dart';
-import 'breaking_news_list_view.dart';
-import 'recommendation_list_view.dart';
 
 import '../../../../core/helpers/custom_home_app_bar_icon.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../../managers/recommendation_news_cubit/recommendation_news_cubit.dart';
+import 'breaking_news_list_view.dart';
+import 'recommendation_list_view.dart';
 
 class ViewAllViewBody extends StatelessWidget {
   const ViewAllViewBody({super.key, required this.listType});

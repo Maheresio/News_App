@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../../models/news_model.dart';
 
+import '../../../models/news_model.dart';
 import '../../../repos/news_repo.dart';
 
 part 'discover_state.dart';

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/core/widgets/custom_shimmer_loading.dart';
 
 import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/custom_shimmer_loading.dart';
 import '../../../../core/widgets/error_data_widget.dart';
 import '../../../../core/widgets/featured_list_view_item.dart';
 import '../../managers/breaking_news_cubit/breaking_news_cubit.dart';
