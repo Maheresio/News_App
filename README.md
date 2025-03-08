@@ -27,7 +27,7 @@ NewsApp is a modern news application built with Flutter. It provides breaking ne
 - 📌 **Bookmark Articles**: Save articles to read later.
 - 🛠️ **Modern UI**: Clean and responsive user interface for a smooth experience.
 - 🌐 **Real-Time API Integration**: Fetches live news data seamlessly.
-- 💡 **Clean Architecture & Code**: Follows best practices for maintainability and scalability.
+- 💡 **MVVM Architecture & Code**: Follows best practices for maintainability and scalability.
 
 ## 🛋️ Technical Specifications
 
@@ -35,7 +35,7 @@ NewsApp is a modern news application built with Flutter. It provides breaking ne
 |--------|---------|
 | **Framework** | Flutter |
 | **State Management** | Cubit |
-| **Architecture** | Clean Architecture (MVVM) |
+| **Architecture** |(MVVM) |
 | **API Handling** | Dio |
 | **News Data Source** | [NewsAPI](https://newsapi.org/) |
 | **Navigation** | GoRouter |
