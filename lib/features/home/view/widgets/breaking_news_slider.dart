@@ -42,7 +42,7 @@ class BreakingNewsSlider extends StatelessWidget {
                     .toggleSlides(index);
               },
               enlargeCenterPage: true,
-              viewportFraction: .8,
+              viewportFraction: .85,
               initialPage: 0,
             ),
           );

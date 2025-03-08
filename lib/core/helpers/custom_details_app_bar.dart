@@ -107,7 +107,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                     maxLines: 3,
                     newsItem.title!,
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      color: Colors.white.withOpacity(.9),
+                      color: Colors.white.withValues(alpha: .9),
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -118,7 +118,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                         overflow: TextOverflow.ellipsis,
                         AppStrings.kTrending,
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: Colors.grey.shade300.withOpacity(.9),
+                          color: Colors.grey.shade300.withValues(alpha: .9),
                           fontWeight: FontWeight.w100,
                         ),
                       ),
@@ -131,7 +131,7 @@ SliverAppBar customDetailsAppBar(BuildContext context, NewsModel newsItem) {
                       Text(
                         toDayMonthYearHour(newsItem.publishedAt!),
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                          color: Colors.grey.shade300.withOpacity(.9),
+                          color: Colors.grey.shade300.withValues(alpha: .9),
                           fontWeight: FontWeight.w100,
                         ),
                       ),

@@ -1,8 +1,11 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-  plugins:
-    - dart_code_metrics
+  errors:
+    prefer_const_constructors: info
+    prefer_const_literals_to_create_immutables: info
+    prefer_const_constructors_in_immutables: info
+    prefer_const_declarations: info
  
 dart_code_metrics:
   anti-patterns:
@@ -25,4 +28,6 @@ dart_code_metrics:
 
 linter:
  
-   rules:
+  rules:
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables

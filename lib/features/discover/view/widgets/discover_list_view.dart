@@ -39,7 +39,7 @@ class DiscoverListView extends StatelessWidget {
           );
         }
 
-        return CustomShimmerLoading();
+        return const CustomShimmerLoading();
       }),
     );
   }

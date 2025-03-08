@@ -61,14 +61,14 @@ class _DiscoverViewBodyState extends State<DiscoverViewBody> {
                       Text(
                         AppStrings.kNewsAroundWorld,
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          color: Colors.black.withOpacity(.4),
+                          color: Colors.black.withValues(alpha: .4),
                         ),
                       ),
                       SizedBox(height: 12.h),
                       TextField(
                         controller: searchController,
                         decoration: InputDecoration(
-                          fillColor: Colors.blueGrey.withOpacity(.07),
+                          fillColor: Colors.blueGrey.withValues(alpha: .07),
                           filled: true,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),

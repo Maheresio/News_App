@@ -12,13 +12,12 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.h),
+        padding: EdgeInsets.symmetric(vertical: 8.h),
         child: NestedScrollView(
           headerSliverBuilder:
               (context, innerBoxIsScrolled) => [
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Column(
-                    spacing: 16.h,
                     children: [CustomHomeAppBar(), BreakingNewsSection()],
                   ),
                 ),

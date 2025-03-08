@@ -48,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
 
         popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
-        animationSettings: NavBarAnimationSettings(
+        animationSettings: const NavBarAnimationSettings(
          
           navBarItemAnimation: ItemAnimationSettings(
             duration: Duration(milliseconds: 200),

@@ -23,21 +23,14 @@ class CustomBlurredAppBarIcon extends StatelessWidget {
       height: MediaQuery.of(context).size.width * 0.06 + iconSize,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.black54.withOpacity(0.15),
+        color: Colors.black54.withValues(alpha: .15),
       ),
       child: Center(
         child: ClipOval(
           child: BackdropFilter(
-            filter: ui.ImageFilter.blur(
-              sigmaX: blurSigma,
-              sigmaY: blurSigma,
-            ),
+            filter: ui.ImageFilter.blur(sigmaX: blurSigma, sigmaY: blurSigma),
             child: IconButton(
-              icon: Icon(
-                iconData,
-                size: iconSize,
-                color: Colors.white,
-              ),
+              icon: Icon(iconData, size: iconSize, color: Colors.white),
               onPressed: onPressed,
               color: Colors.white,
             ),
